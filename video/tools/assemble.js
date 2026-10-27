@@ -79,8 +79,7 @@ function main() {
 
   // ---- narration track
   const track = new Int16Array(Math.ceil(total * SR) + SR);
-  const srt = [];
-  let n = 1;
+  const cues = [];
   for (const sc of TL.scenes) {
     for (const b of sc.beats) {
       const wav = path.join(BUILD, 'audio', `${b.id}.wav`);
@@ -94,7 +93,7 @@ function main() {
       let t = b.audioStart;
       for (const p of parts) {
         const d = (p.length / totalChars) * b.audioDur;
-        srt.push(`${n++}\n${srtTime(t)} --> ${srtTime(t + d - 0.04)}\n${wrap2(p)}\n`);
+        cues.push({ start: t, end: t + d - 0.04, text: wrap2(p) });
         t += d;
       }
     }
@@ -110,14 +109,15 @@ function main() {
     `${ln}:measured_I=${stats.input_i}:measured_TP=${stats.input_tp}:measured_LRA=${stats.input_lra}:measured_thresh=${stats.input_thresh}:offset=${stats.target_offset}:linear=true`,
     '-ar', String(SR), '-ac', '1', '-c:a', 'pcm_s16le', narr], { stdio: 'inherit' });
   console.log(`narration loudness ${stats.input_i} LUFS -> -16 LUFS`);
+  const srtOf = (list, t0 = 0) => list.map((c, i) => `${i + 1}\n${srtTime(c.start - t0)} --> ${srtTime(c.end - t0)}\n${c.text}\n`).join('\n');
   const srtPath = path.join(BUILD, 'subtitles.srt');
-  fs.writeFileSync(srtPath, srt.join('\n'));
+  fs.writeFileSync(srtPath, srtOf(cues));
 
   // ---- chapter metadata
+  const label = (ch) => (ch.num === 0 ? 'Introduction' : `${String(ch.num).padStart(2, '0')} ${ch.title}`);
   const meta = [';FFMETADATA1', 'title=D&W Exploration Drilling Lingo (NCS)', 'artist=D&W graduate guide', ''];
   for (const ch of TL.chapters) {
-    const label = ch.num === 0 ? 'Introduction' : `${String(ch.num).padStart(2, '0')} ${ch.title}`;
-    meta.push('[CHAPTER]', 'TIMEBASE=1/1000', `START=${Math.round(ch.start * 1000)}`, `END=${Math.round(ch.end * 1000)}`, `title=${label}`, '');
+    meta.push('[CHAPTER]', 'TIMEBASE=1/1000', `START=${Math.round(ch.start * 1000)}`, `END=${Math.round(ch.end * 1000)}`, `title=${label(ch)}`, '');
   }
   const metaPath = path.join(BUILD, 'chapters.txt');
   fs.writeFileSync(metaPath, meta.join('\n'));
@@ -148,21 +148,41 @@ function main() {
   fs.copyFileSync(srtPath, outName.replace(/\.mp4$/, '.srt'));
   console.log(`wrote ${outName}  (${(total / 60).toFixed(1)} min, ${(fs.statSync(outName).size / 1e6).toFixed(0)} MB)`);
 
+  // ---- cut a range of chapters into its own file, with its own subtitles and chapter markers
+  function cut(out, chs, title) {
+    const ids = new Set(chs.map((c) => c.id));
+    const scenes = TL.scenes.filter((sc) => ids.has(sc.chapterId));
+    const t0 = scenes[0].f0 / FPS, t1 = scenes[scenes.length - 1].f1 / FPS;
+    const base = path.join(BUILD, path.basename(out, '.mp4'));
+    fs.writeFileSync(`${base}.concat.txt`, scenes.map((sc) => `file '${path.join(SEG, sc.key + '.mp4')}'`).join('\n'));
+    fs.writeFileSync(`${base}.srt`, srtOf(cues.filter((c) => c.start >= t0 - 0.01 && c.start < t1), t0));
+    const pm = [';FFMETADATA1', `title=${title}`, ''];
+    for (const ch of chs) pm.push('[CHAPTER]', 'TIMEBASE=1/1000', `START=${Math.round((ch.start - t0) * 1000)}`, `END=${Math.round((ch.end - t0) * 1000)}`, `title=${label(ch)}`, '');
+    fs.writeFileSync(`${base}.meta.txt`, pm.join('\n'));
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', `${base}.concat.txt`, '-ss', String(t0), '-t', String(t1 - t0), '-i', narr,
+      '-i', `${base}.srt`, '-i', `${base}.meta.txt`, '-map', '0:v', '-map', '1:a', '-map', '2:s', '-map_metadata', '3', '-map_chapters', '3',
+      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-ar', '48000', '-c:s', 'mov_text', '-metadata:s:a:0', 'language=eng', '-metadata:s:s:0', 'language=eng',
+      '-movflags', '+faststart', '-t', String(t1 - t0), out], { stdio: 'inherit' });
+    return (fs.statSync(out).size / 1e6).toFixed(1);
+  }
+  const pad = (v) => String(v).padStart(2, '0');
+
   // ---- optional per-chapter files
   if (perChapter) {
     const dir = path.join(OUT, 'chapters');
     fs.mkdirSync(dir, { recursive: true });
     for (const ch of TL.chapters) {
-      const scenes = TL.scenes.filter((s) => s.chapterId === ch.id);
-      const t0 = scenes[0].f0 / FPS, t1 = scenes[scenes.length - 1].f1 / FPS;
-      const lp = path.join(BUILD, `concat_${ch.id}.txt`);
-      fs.writeFileSync(lp, scenes.map((sc) => `file '${path.join(SEG, sc.key + '.mp4')}'`).join('\n'));
-      const name = `${String(ch.num).padStart(2, '0')}_${ch.title.replace(/[^A-Za-z0-9]+/g, '_').replace(/_+$/, '')}.mp4`;
-      const out = path.join(dir, name);
-      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lp, '-ss', String(t0), '-t', String(t1 - t0), '-i', narr,
-        '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-ar', '48000', '-movflags', '+faststart', '-shortest', out], { stdio: 'inherit' });
-      console.log('  chapter', name, (fs.statSync(out).size / 1e6).toFixed(1), 'MB');
+      const name = `${pad(ch.num)}_${ch.title.replace(/[^A-Za-z0-9]+/g, '_').replace(/_+$/, '')}.mp4`;
+      console.log('  chapter', name, cut(path.join(dir, name), [ch], `D&W Lingo: ${label(ch)}`), 'MB');
     }
+  }
+  // ---- optional multi-part files, e.g. --parts 0-10,11-20 (keeps each file under upload limits)
+  if (args.includes('--parts')) {
+    args[args.indexOf('--parts') + 1].split(',').forEach((r, i) => {
+      const [a, b] = r.split('-').map(Number);
+      const out = path.join(OUT, `DW_Exploration_Drilling_Lingo_NCS_part${i + 1}_ch${pad(a)}-${pad(b)}.mp4`);
+      console.log('  part', path.basename(out), cut(out, TL.chapters.filter((c) => c.num >= a && c.num <= b), `D&W Exploration Drilling Lingo (NCS), part ${i + 1}`), 'MB');
+    });
   }
 }
 
