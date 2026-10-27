@@ -5,7 +5,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { execFileSync } = require('child_process');
+const { execFileSync, spawnSync } = require('child_process');
 const { loadChapters } = require('../src/script');
 const { buildTimeline } = require('../src/engine/timeline');
 const { FPS } = require('../src/engine/core');
@@ -99,8 +99,17 @@ function main() {
       }
     }
   }
+  const raw = path.join(BUILD, 'narration_raw.wav');
+  writeWav(raw, track.subarray(0, Math.ceil(total * SR)));
+  // two-pass loudness normalisation to -16 LUFS (speech), true peak -1.5 dB
+  const ln = 'loudnorm=I=-16:TP=-1.5:LRA=11';
   const narr = path.join(BUILD, 'narration.wav');
-  writeWav(narr, track.subarray(0, Math.ceil(total * SR)));
+  const meas = spawnSync('ffmpeg', ['-hide_banner', '-nostdin', '-i', raw, '-af', `${ln}:print_format=json`, '-f', 'null', '-'], { encoding: 'utf8' }).stderr || '';
+  const stats = JSON.parse(meas.slice(meas.lastIndexOf('{'), meas.lastIndexOf('}') + 1));
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-nostdin', '-i', raw, '-af',
+    `${ln}:measured_I=${stats.input_i}:measured_TP=${stats.input_tp}:measured_LRA=${stats.input_lra}:measured_thresh=${stats.input_thresh}:offset=${stats.target_offset}:linear=true`,
+    '-ar', String(SR), '-ac', '1', '-c:a', 'pcm_s16le', narr], { stdio: 'inherit' });
+  console.log(`narration loudness ${stats.input_i} LUFS -> -16 LUFS`);
   const srtPath = path.join(BUILD, 'subtitles.srt');
   fs.writeFileSync(srtPath, srt.join('\n'));
 
