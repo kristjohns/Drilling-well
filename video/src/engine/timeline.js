@@ -52,8 +52,9 @@ function makeS(sc, t, gt) {
   const n = beats.length;
   let bi = -1;
   for (let i = 0; i < n; i++) if (t >= beats[i].start) bi = i;
-  const start = (i) => (i < n ? beats[i].start : sc.dur);
-  const end = (i) => (i < n ? beats[i].start + beats[i].dur : sc.dur);
+  // i < 0 (before the first beat) behaves like a beat at t = 0 that never ends
+  const start = (i) => (i < 0 ? 0 : i < n ? beats[i].start : sc.dur);
+  const end = (i) => (i < 0 ? sc.dur : i < n ? beats[i].start + beats[i].dur : sc.dur);
   const R = sc.layout === 'full' ? LAYOUT.stageFull : LAYOUT.stage;
   const S = {
     t, gt, dur: sc.dur, bi, n,
@@ -70,6 +71,7 @@ function makeS(sc, t, gt) {
     q: (i) => clamp((t - start(i)) / Math.max(0.1, (beats[Math.min(i, n - 1)] || {}).dur || 1)),
     // highlight factor: rises when beat i starts, falls when it ends
     hl: (i, j = i) => {
+      if (i < 0) return 0;
       const a = clamp((t - start(i)) / 0.4);
       const b = 1 - clamp((t - end(j)) / 0.5);
       return ease.out(Math.min(a, b));

@@ -144,10 +144,13 @@ async function all(opts) {
     const i = load.indexOf(Math.min(...load));
     queues[i].push(k); load[i] += byKey[k].sc.f1 - byKey[k].sc.f0;
   }
-  await Promise.all(queues.filter((q) => q.length).map((q) => new Promise((res, rej) => {
+  // one worker per queue; a failing worker does not stop the others
+  const res = await Promise.allSettled(queues.filter((q) => q.length).map((q) => new Promise((ok, fail) => {
     const p = spawn(process.execPath, [__filename, 'scenes', q.join(',')], { stdio: 'inherit' });
-    p.on('close', (code) => (code === 0 ? res() : rej(new Error('worker failed'))));
+    p.on('close', (code) => (code === 0 ? ok() : fail(new Error('worker failed: ' + q[0]))));
   })));
+  const bad = res.filter((r) => r.status === 'rejected');
+  if (bad.length) throw new Error(`${bad.length} render worker(s) failed; rerun to retry the missing scenes`);
 }
 
 (async () => {
