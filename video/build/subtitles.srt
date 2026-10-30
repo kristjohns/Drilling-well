@@ -1,0 +1,315 @@
+1
+00:00:02,000 --> 00:00:06,587
+Two hundred kilometres off the coast of Norway, the North Sea is rarely calm.
+
+2
+00:00:07,007 --> 00:00:18,698
+In winter, storm waves here can be taller than a five-storey building. In 1995, a laser on the Draupner platform measured a single wave of twenty-five point six metres.
+
+3
+00:00:19,680 --> 00:00:30,699
+And yet, out here, a floating steel structure the size of a city block holds its position over one exact spot on the seabed, and drills thousands of metres into the earth.
+
+4
+00:00:31,680 --> 00:00:35,484
+This is how a modern Norwegian drilling rig works. All of it.
+
+5
+00:00:40,880 --> 00:00:48,062
+The Norwegian Continental Shelf stretches from the North Sea, up through the Norwegian Sea, and into the Arctic Barents Sea.
+
+6
+00:00:48,780 --> 00:00:59,212
+It is home to fields like Johan Sverdrup, Troll, Snorre and Oseberg, and, far in the north, Johan Castberg, which started producing in March 2025.
+
+7
+00:00:59,900 --> 00:01:12,444
+And the drilling never stops. In 2025, one hundred and seventy-five new development wells were started, and forty wildcat exploration wells were completed, finding twenty-one discoveries.
+
+8
+00:01:13,440 --> 00:01:15,203
+Three kinds of rig do this work.
+
+9
+00:01:15,623 --> 00:01:20,737
+Fixed platforms carry their own drilling rig, and drill dozens of wells from one spot.
+
+10
+00:01:21,157 --> 00:01:25,437
+Jack-ups stand on steel legs lowered to the seabed, in shallower water.
+
+11
+00:01:25,857 --> 00:01:32,798
+And then there's the semi-submersible: a floating rig that can work almost anywhere. That's the one we're going inside.
+
+12
+00:01:35,800 --> 00:01:41,624
+Meet a harsh-environment semi-submersible, the type built specifically for Norwegian winters.
+
+13
+00:01:42,044 --> 00:01:46,951
+It's around a hundred and twenty metres long, and displaces some sixty thousand tonnes.
+
+14
+00:01:47,760 --> 00:02:01,776
+Its secret is below the waterline. Two huge pontoons are ballasted down more than twenty metres deep, below most of the wave energy. Only the columns cross the surface, so passing waves have very little to push on.
+
+15
+00:02:02,196 --> 00:02:06,733
+The result: in a storm, a semi-submersible moves far less than a ship.
+
+16
+00:02:07,640 --> 00:02:18,797
+On deck: a derrick more than fifty metres tall, a pipe deck stacked with steel tubulars, cranes, a helideck, and living quarters with beds for about one hundred and thirty people.
+
+17
+00:02:19,217 --> 00:02:25,190
+Six diesel generators produce almost thirty-eight megawatts: enough electricity for a small town.
+
+18
+00:02:26,000 --> 00:02:41,314
+To stay on location, the rig either runs out eight or more anchor lines, spread in every direction, or uses dynamic positioning: satellite-guided thrusters that push back against wind, waves and current, every second of the day.
+
+19
+00:02:44,320 --> 00:02:46,257
+Everyone arrives by helicopter.
+
+20
+00:02:46,677 --> 00:02:56,170
+A typical Norwegian rotation is two weeks offshore, then four weeks at home. Offshore, you work twelve-hour shifts, day or night, every single day.
+
+21
+00:02:56,960 --> 00:03:11,907
+The drill crew is led by the driller, with an assistant driller, a derrick operator and roughnecks. Around them work crane operators, mechanics, electricians, the mud engineer, the directional driller, and the oil company's own drilling supervisor.
+
+22
+00:03:12,327 --> 00:03:16,399
+The rig never sleeps. Drilling continues twenty-four hours a day.
+
+23
+00:03:19,400 --> 00:03:21,902
+Let's start at the heart of the rig: the derrick.
+
+24
+00:03:22,322 --> 00:03:28,594
+Drilling is, at its core, lifting and turning an extremely long, extremely heavy string of steel pipe.
+
+25
+00:03:29,180 --> 00:03:39,477
+At the very top sits the crown block. Below it hangs the travelling block, and below that, the top drive: a powerful electric motor that grips the pipe and spins it.
+
+26
+00:03:39,897 --> 00:03:51,091
+Thick steel wire runs from a giant winch on the drill floor, the drawworks, up over the crown and down through the travelling block. Reel the wire in, and the whole drill string rises.
+
+27
+00:03:51,511 --> 00:03:55,607
+On this class of rig, it is rated to lift around seven hundred tonnes.
+
+28
+00:03:56,400 --> 00:04:04,598
+But there's a problem. The rig floats, so it rises and falls with every wave. The drill bit, thousands of metres below, must not.
+
+29
+00:04:05,018 --> 00:04:17,434
+So the hoisting system is heave compensated. Sensors measure the rig's motion, and the system pays out and reels in wire in exact opposition, holding the bit steady at the bottom of the hole.
+
+30
+00:04:20,440 --> 00:04:23,686
+This is the drill floor. Notice what's missing: people.
+
+31
+00:04:24,106 --> 00:04:33,209
+Norway pioneered hands-free pipe handling. The area around the well centre is a red zone, and the heavy, dangerous work is done by machines.
+
+32
+00:04:33,820 --> 00:04:40,903
+Drill pipe stands upright in a giant rack called the fingerboard, in stands of three joints, almost thirty metres long.
+
+33
+00:04:41,323 --> 00:04:46,635
+A pipe-handling machine plucks a stand from the fingerboard and swings it over to the well centre.
+
+34
+00:04:47,220 --> 00:04:54,537
+The iron roughneck rolls in, spins the threads together, and torques the connection to tens of thousands of newton-metres.
+
+35
+00:04:54,957 --> 00:05:02,914
+Power slips grip the string in the floor while the connection is made. Then they release, and the top drive lowers the pipe into the well.
+
+36
+00:05:03,500 --> 00:05:13,262
+Many rigs on the Norwegian shelf have a second, auxiliary well centre, where machines build stands or run casing offline, in parallel with drilling.
+
+37
+00:05:13,860 --> 00:05:19,193
+Everything is controlled from the driller's cabin: joystick chairs, surrounded by screens.
+
+38
+00:05:19,780 --> 00:05:30,617
+And the next step is already being tested offshore: robot arms on the drill floor, a technology developed right here in Stavanger, to take over the last manual jobs.
+
+39
+00:05:33,600 --> 00:05:35,353
+Now let's follow the pipe down.
+
+40
+00:05:35,773 --> 00:05:46,708
+Through the moonpool, an opening in the middle of the rig, a steel riser runs to the seabed. Across most of the shelf, the water is between one hundred and four hundred metres deep.
+
+41
+00:05:47,300 --> 00:06:00,206
+On the seabed stands the blowout preventer, or BOP: a stack of massive hydraulic valves as tall as a four-storey building, weighing hundreds of tonnes, and rated to fifteen thousand psi.
+
+42
+00:06:00,900 --> 00:06:02,792
+A well is built like a telescope.
+
+43
+00:06:03,212 --> 00:06:13,490
+The first sections, the top hole, are drilled before the BOP is in place. A thirty-inch conductor goes in first, then twenty-inch casing that carries the wellhead.
+
+44
+00:06:14,100 --> 00:06:23,337
+Then the BOP and riser are latched on, and the well goes deeper in steps. Drill a section, run steel casing into it, and cement it in place.
+
+45
+00:06:23,757 --> 00:06:36,038
+Thirteen and three-eighths inch. Nine and five-eighths. Each section narrower, each one cemented and pressure tested, until the bit reaches the reservoir, typically two to five kilometres down.
+
+46
+00:06:39,040 --> 00:06:42,852
+The lifeblood of every well is drilling fluid, known simply as mud.
+
+47
+00:06:43,272 --> 00:06:52,158
+Four giant pumps, each around two thousand two hundred horsepower, push mud at up to seven thousand five hundred psi down through the drill pipe.
+
+48
+00:06:52,578 --> 00:07:02,050
+It jets out of nozzles in the bit, cooling it and sweeping away the rock cuttings, then flows back up the annulus, the gap between the pipe and the wall of the hole.
+
+49
+00:07:02,470 --> 00:07:12,715
+Back on the rig, vibrating shale shakers screen out the cuttings. Degassers and centrifuges clean the mud, and it returns to the pits, ready to go down again.
+
+50
+00:07:13,300 --> 00:07:21,876
+But mud does more than carry rock. Its weight pushes back against the pressure in the formation. The mud column is the well's first barrier.
+
+51
+00:07:22,460 --> 00:07:35,665
+And nothing contaminated goes overboard. Since 1993, Norway has banned discharging cuttings soaked in oil-based mud. They are injected back underground, or shipped to shore for treatment.
+
+52
+00:07:38,680 --> 00:07:42,177
+At the very bottom of the string is the bottom-hole assembly.
+
+53
+00:07:42,597 --> 00:07:49,571
+The bit is a PDC bit: rows of synthetic diamond cutters that shear the rock, like a plane shaving wood.
+
+54
+00:07:50,180 --> 00:07:59,268
+Just above it is a rotary steerable system. Pads push against the wall of the hole to steer the bit in any direction, while the whole string keeps turning.
+
+55
+00:07:59,860 --> 00:08:12,041
+Above that are the sensors, for measurement and logging while drilling. They read gamma rays, resistivity, density and pressure, so the team knows exactly where the bit is, and what it's drilling through.
+
+56
+00:08:12,461 --> 00:08:25,474
+The data travels to the surface as pressure pulses in the mud, at just a few bits per second. Or, with wired drill pipe, through cables built into the pipe itself, around ten thousand times faster.
+
+57
+00:08:26,060 --> 00:08:38,220
+That's what makes geosteering possible: guiding the well along a reservoir layer just a few metres thick, with deep-reading electromagnetic tools that map the rock tens of metres around the bit.
+
+58
+00:08:38,820 --> 00:09:00,580
+The results can be spectacular. In 2025, Aker BP used the rig Deepsea Stavanger to drill one exploration well with eight branches: forty-five thousand metres of hole in about three months. Its longest branch reached ten thousand, six hundred and sixty-six metres, the longest wellbore ever drilled on the Norwegian shelf.
+
+59
+00:09:03,680 --> 00:09:06,659
+Offshore, one rule matters above all: barriers.
+
+60
+00:09:07,079 --> 00:09:15,435
+Under the Norwegian standard NORSOK D-010, a well must always have two independent barriers between the reservoir and the surface.
+
+61
+00:09:15,855 --> 00:09:24,475
+While drilling, the primary barrier is the mud column. The secondary barrier is the casing, the cement, the wellhead and the blowout preventer.
+
+62
+00:09:25,060 --> 00:09:32,404
+If the formation pressure ever exceeds the pressure of the mud, gas or oil can push into the well. That's called a kick.
+
+63
+00:09:32,824 --> 00:09:40,461
+Sensors constantly watch the mud volume in the pits and the flow out of the well. Even a small gain sets off an alarm.
+
+64
+00:09:41,060 --> 00:09:49,017
+The driller shuts in the well with the BOP, then circulates the kick out through a choke, while heavier mud is pumped in to regain control.
+
+65
+00:09:49,437 --> 00:09:54,616
+And if everything else fails, shear rams can cut straight through the drill pipe and seal the well.
+
+66
+00:09:55,220 --> 00:10:05,375
+Many wells now use managed pressure drilling, where automated chokes and pumps hold the pressure at the bottom of the hole inside a narrow window, second by second.
+
+67
+00:10:08,360 --> 00:10:10,835
+The modern rig is also a data centre.
+
+68
+00:10:11,255 --> 00:10:25,132
+Thousands of sensors stream data ashore to operations centres in cities like Stavanger, where specialists support several rigs at once. Directional drillers, mud engineers and cementers increasingly work from land.
+
+69
+00:10:25,740 --> 00:10:36,343
+In February 2025, on an Equinor well in the North Sea, Halliburton and the Norwegian company Sekal ran the world's first automated on-bottom drilling system.
+
+70
+00:10:36,763 --> 00:10:47,131
+In a closed loop, software steers the well, manages vibration and hole cleaning, and controls the rig's machines, while digital safeguards watch for anything abnormal.
+
+71
+00:10:47,551 --> 00:10:53,204
+Digital twins model the well in real time, and AI helps spot problems before they happen.
+
+72
+00:10:56,200 --> 00:10:59,842
+Norway is also pushing hard to cut emissions from drilling.
+
+73
+00:11:00,262 --> 00:11:13,915
+Hybrid rigs carry big battery banks that absorb power peaks and act as instant backup, so fewer engines need to run. On Transocean Spitsbergen, a battery system cut fuel use by about fifteen percent.
+
+74
+00:11:14,500 --> 00:11:30,372
+Some rigs are plugging into the shore. The jack-up Askepott was rebuilt to draw power through the Martin Linge platform, from a cable over one hundred and sixty kilometres long, cutting an expected twenty thousand tonnes of carbon dioxide a year.
+
+75
+00:11:30,980 --> 00:11:45,121
+Johan Sverdrup, one of the biggest fields, runs on power from shore at under one kilogram of CO2 per barrel. And at Snorre and Gullfaks, the floating wind farm Hywind Tampen supplies around a third of the power.
+
+76
+00:11:48,120 --> 00:12:00,629
+When the well reaches its target, it is completed: screens and production tubing go in, a Christmas tree of valves is installed on the seabed, and the rig pulls its anchors and moves on to the next well.
+
+77
+00:12:01,220 --> 00:12:09,711
+And the work isn't slowing down. New rig contracts already stretch towards 2035, and more rigs are heading for the Norwegian shelf.
+
+78
+00:12:10,131 --> 00:12:18,974
+Floating steel, robotic hands and software that drills on its own, all guided by people who live two weeks at a time in the middle of the sea.
+
+79
+00:12:19,660 --> 00:12:22,080
+That is how a drilling rig in Norway works.

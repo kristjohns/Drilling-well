@@ -1,0 +1,950 @@
+{
+ "fps": 25,
+ "duration": 748.08,
+ "frames": 18702,
+ "chapters": [
+  {
+   "n": 0,
+   "title": ""
+  },
+  {
+   "n": 1,
+   "title": "The Norwegian Shelf"
+  },
+  {
+   "n": 2,
+   "title": "Meet the Rig"
+  },
+  {
+   "n": 3,
+   "title": "Life Offshore"
+  },
+  {
+   "n": 4,
+   "title": "The Derrick"
+  },
+  {
+   "n": 5,
+   "title": "The Drill Floor"
+  },
+  {
+   "n": 6,
+   "title": "Building the Well"
+  },
+  {
+   "n": 7,
+   "title": "Mud"
+  },
+  {
+   "n": 8,
+   "title": "Downhole"
+  },
+  {
+   "n": 9,
+   "title": "Well Control"
+  },
+  {
+   "n": 10,
+   "title": "The Digital Rig"
+  },
+  {
+   "n": 11,
+   "title": "Cutting Emissions"
+  },
+  {
+   "n": 12,
+   "title": "The Finished Well"
+  }
+ ],
+ "title": "The Drilling Rig: How Norway Drills for Oil and Gas",
+ "shots": [
+  {
+   "id": "open_storm",
+   "chapter": 0,
+   "start": 0.0,
+   "dur": 19.28,
+   "frames": 482,
+   "lines": [
+    {
+     "text": "Two hundred kilometres off the coast of Norway, the North Sea is rarely calm.",
+     "start": 2.0,
+     "dur": 4.587,
+     "audio": "build/tts/b4104facb210bcfa.wav"
+    },
+    {
+     "text": "In winter, storm waves here can be taller than a five-storey building. In 1995, a laser on the Draupner platform measured a single wave of twenty-five point six metres.",
+     "start": 7.007,
+     "dur": 11.691,
+     "audio": "build/tts/9baac55f7898d788.wav"
+    }
+   ]
+  },
+  {
+   "id": "open_rig",
+   "chapter": 0,
+   "start": 19.28,
+   "dur": 12.0,
+   "frames": 300,
+   "lines": [
+    {
+     "text": "And yet, out here, a floating steel structure the size of a city block holds its position over one exact spot on the seabed, and drills thousands of metres into the earth.",
+     "start": 0.4,
+     "dur": 11.019,
+     "audio": "build/tts/cb11d165a428ae3b.wav"
+    }
+   ]
+  },
+  {
+   "id": "title",
+   "chapter": 0,
+   "start": 31.28,
+   "dur": 7.4,
+   "frames": 185,
+   "lines": [
+    {
+     "text": "This is how a modern Norwegian drilling rig works. All of it.",
+     "start": 0.4,
+     "dur": 3.804,
+     "audio": "build/tts/f4817a458135ffe0.wav"
+    }
+   ]
+  },
+  {
+   "id": "map_intro",
+   "chapter": 1,
+   "start": 38.68,
+   "dur": 9.8,
+   "frames": 245,
+   "lines": [
+    {
+     "text": "The Norwegian Continental Shelf stretches from the North Sea, up through the Norwegian Sea, and into the Arctic Barents Sea.",
+     "start": 2.2,
+     "dur": 7.182,
+     "audio": "build/tts/db6541c52355941b.wav"
+    }
+   ]
+  },
+  {
+   "id": "map_fields",
+   "chapter": 1,
+   "start": 48.48,
+   "dur": 11.12,
+   "frames": 278,
+   "lines": [
+    {
+     "text": "It is home to fields like Johan Sverdrup, Troll, Snorre and Oseberg, and, far in the north, Johan Castberg, which started producing in March 2025.",
+     "start": 0.3,
+     "dur": 10.432,
+     "audio": "build/tts/c5a86b28ed046a8f.wav"
+    }
+   ]
+  },
+  {
+   "id": "map_stats",
+   "chapter": 1,
+   "start": 59.6,
+   "dur": 13.44,
+   "frames": 336,
+   "lines": [
+    {
+     "text": "And the drilling never stops. In 2025, one hundred and seventy-five new development wells were started, and forty wildcat exploration wells were completed, finding twenty-one discoveries.",
+     "start": 0.3,
+     "dur": 12.544,
+     "audio": "build/tts/6ef8960a930d3fad.wav"
+    }
+   ]
+  },
+  {
+   "id": "rigtypes",
+   "chapter": 1,
+   "start": 73.04,
+   "dur": 20.56,
+   "frames": 514,
+   "lines": [
+    {
+     "text": "Three kinds of rig do this work.",
+     "start": 0.4,
+     "dur": 1.763,
+     "audio": "build/tts/2fb2b852d8a072b8.wav"
+    },
+    {
+     "text": "Fixed platforms carry their own drilling rig, and drill dozens of wells from one spot.",
+     "start": 2.583,
+     "dur": 5.114,
+     "audio": "build/tts/2f22286a586571a0.wav"
+    },
+    {
+     "text": "Jack-ups stand on steel legs lowered to the seabed, in shallower water.",
+     "start": 8.117,
+     "dur": 4.28,
+     "audio": "build/tts/356317120f383490.wav"
+    },
+    {
+     "text": "And then there's the semi-submersible: a floating rig that can work almost anywhere. That's the one we're going inside.",
+     "start": 12.817,
+     "dur": 6.941,
+     "audio": "build/tts/c1ffb2dc41d41c72.wav"
+    }
+   ]
+  },
+  {
+   "id": "rig_orbit",
+   "chapter": 2,
+   "start": 93.6,
+   "dur": 13.76,
+   "frames": 344,
+   "lines": [
+    {
+     "text": "Meet a harsh-environment semi-submersible, the type built specifically for Norwegian winters.",
+     "start": 2.2,
+     "dur": 5.824,
+     "audio": "build/tts/69d3c80530845eaf.wav"
+    },
+    {
+     "text": "It's around a hundred and twenty metres long, and displaces some sixty thousand tonnes.",
+     "start": 8.444,
+     "dur": 4.907,
+     "audio": "build/tts/0170b5af5b3ca874.wav"
+    }
+   ]
+  },
+  {
+   "id": "rig_underwater",
+   "chapter": 2,
+   "start": 107.36,
+   "dur": 19.88,
+   "frames": 497,
+   "lines": [
+    {
+     "text": "Its secret is below the waterline. Two huge pontoons are ballasted down more than twenty metres deep, below most of the wave energy. Only the columns cross the surface, so passing waves have very little to push on.",
+     "start": 0.4,
+     "dur": 14.016,
+     "audio": "build/tts/aa465b108e590802.wav"
+    },
+    {
+     "text": "The result: in a storm, a semi-submersible moves far less than a ship.",
+     "start": 14.836,
+     "dur": 4.537,
+     "audio": "build/tts/9ad1f5bb9108c947.wav"
+    }
+   ]
+  },
+  {
+   "id": "rig_deck",
+   "chapter": 2,
+   "start": 127.24,
+   "dur": 18.36,
+   "frames": 459,
+   "lines": [
+    {
+     "text": "On deck: a derrick more than fifty metres tall, a pipe deck stacked with steel tubulars, cranes, a helideck, and living quarters with beds for about one hundred and thirty people.",
+     "start": 0.4,
+     "dur": 11.157,
+     "audio": "build/tts/f1d4fb326e214f4c.wav"
+    },
+    {
+     "text": "Six diesel generators produce almost thirty-eight megawatts: enough electricity for a small town.",
+     "start": 11.977,
+     "dur": 5.973,
+     "audio": "build/tts/49ea782ce83d648b.wav"
+    }
+   ]
+  },
+  {
+   "id": "rig_station",
+   "chapter": 2,
+   "start": 145.6,
+   "dur": 16.52,
+   "frames": 413,
+   "lines": [
+    {
+     "text": "To stay on location, the rig either runs out eight or more anchor lines, spread in every direction, or uses dynamic positioning: satellite-guided thrusters that push back against wind, waves and current, every second of the day.",
+     "start": 0.4,
+     "dur": 15.314,
+     "audio": "build/tts/4b3db9838dc97109.wav"
+    }
+   ]
+  },
+  {
+   "id": "heli",
+   "chapter": 3,
+   "start": 162.12,
+   "dur": 14.44,
+   "frames": 361,
+   "lines": [
+    {
+     "text": "Everyone arrives by helicopter.",
+     "start": 2.2,
+     "dur": 1.937,
+     "audio": "build/tts/e36dd0e4359341ac.wav"
+    },
+    {
+     "text": "A typical Norwegian rotation is two weeks offshore, then four weeks at home. Offshore, you work twelve-hour shifts, day or night, every single day.",
+     "start": 4.557,
+     "dur": 9.493,
+     "audio": "build/tts/369ff8152aa92380.wav"
+    }
+   ]
+  },
+  {
+   "id": "crew",
+   "chapter": 3,
+   "start": 176.56,
+   "dur": 20.64,
+   "frames": 516,
+   "lines": [
+    {
+     "text": "The drill crew is led by the driller, with an assistant driller, a derrick operator and roughnecks. Around them work crane operators, mechanics, electricians, the mud engineer, the directional driller, and the oil company's own drilling supervisor.",
+     "start": 0.4,
+     "dur": 14.947,
+     "audio": "build/tts/2ecfd05573441a29.wav"
+    },
+    {
+     "text": "The rig never sleeps. Drilling continues twenty-four hours a day.",
+     "start": 15.767,
+     "dur": 4.072,
+     "audio": "build/tts/4c46003d878eaa77.wav"
+    }
+   ]
+  },
+  {
+   "id": "derrick_intro",
+   "chapter": 4,
+   "start": 197.2,
+   "dur": 11.68,
+   "frames": 292,
+   "lines": [
+    {
+     "text": "Let's start at the heart of the rig: the derrick.",
+     "start": 2.2,
+     "dur": 2.502,
+     "audio": "build/tts/a5b033786273fc10.wav"
+    },
+    {
+     "text": "Drilling is, at its core, lifting and turning an extremely long, extremely heavy string of steel pipe.",
+     "start": 5.122,
+     "dur": 6.272,
+     "audio": "build/tts/e2fc050ea2aeba1d.wav"
+    }
+   ]
+  },
+  {
+   "id": "hoist_system",
+   "chapter": 4,
+   "start": 208.88,
+   "dur": 27.12,
+   "frames": 678,
+   "lines": [
+    {
+     "text": "At the very top sits the crown block. Below it hangs the travelling block, and below that, the top drive: a powerful electric motor that grips the pipe and spins it.",
+     "start": 0.3,
+     "dur": 10.297,
+     "audio": "build/tts/4f5d80dd45b3dedf.wav"
+    },
+    {
+     "text": "Thick steel wire runs from a giant winch on the drill floor, the drawworks, up over the crown and down through the travelling block. Reel the wire in, and the whole drill string rises.",
+     "start": 11.017,
+     "dur": 11.194,
+     "audio": "build/tts/ea158d25c75c9e91.wav"
+    },
+    {
+     "text": "On this class of rig, it is rated to lift around seven hundred tonnes.",
+     "start": 22.631,
+     "dur": 4.096,
+     "audio": "build/tts/39c175edd922f7aa.wav"
+    }
+   ]
+  },
+  {
+   "id": "heave",
+   "chapter": 4,
+   "start": 236.0,
+   "dur": 22.24,
+   "frames": 556,
+   "lines": [
+    {
+     "text": "But there's a problem. The rig floats, so it rises and falls with every wave. The drill bit, thousands of metres below, must not.",
+     "start": 0.4,
+     "dur": 8.198,
+     "audio": "build/tts/4d4912093514398c.wav"
+    },
+    {
+     "text": "So the hoisting system is heave compensated. Sensors measure the rig's motion, and the system pays out and reels in wire in exact opposition, holding the bit steady at the bottom of the hole.",
+     "start": 9.018,
+     "dur": 12.416,
+     "audio": "build/tts/d026c8a125d869a2.wav"
+    }
+   ]
+  },
+  {
+   "id": "floor_intro",
+   "chapter": 5,
+   "start": 258.24,
+   "dur": 15.28,
+   "frames": 382,
+   "lines": [
+    {
+     "text": "This is the drill floor. Notice what's missing: people.",
+     "start": 2.2,
+     "dur": 3.246,
+     "audio": "build/tts/4dbd8b0842b8b677.wav"
+    },
+    {
+     "text": "Norway pioneered hands-free pipe handling. The area around the well centre is a red zone, and the heavy, dangerous work is done by machines.",
+     "start": 5.866,
+     "dur": 9.103,
+     "audio": "build/tts/48b332cf4aaffb68.wav"
+    }
+   ]
+  },
+  {
+   "id": "fingerboard",
+   "chapter": 5,
+   "start": 273.52,
+   "dur": 13.4,
+   "frames": 335,
+   "lines": [
+    {
+     "text": "Drill pipe stands upright in a giant rack called the fingerboard, in stands of three joints, almost thirty metres long.",
+     "start": 0.3,
+     "dur": 7.083,
+     "audio": "build/tts/846b11d7e0192f81.wav"
+    },
+    {
+     "text": "A pipe-handling machine plucks a stand from the fingerboard and swings it over to the well centre.",
+     "start": 7.803,
+     "dur": 5.312,
+     "audio": "build/tts/049575b8bfa46973.wav"
+    }
+   ]
+  },
+  {
+   "id": "roughneck",
+   "chapter": 5,
+   "start": 286.92,
+   "dur": 16.28,
+   "frames": 407,
+   "lines": [
+    {
+     "text": "The iron roughneck rolls in, spins the threads together, and torques the connection to tens of thousands of newton-metres.",
+     "start": 0.3,
+     "dur": 7.317,
+     "audio": "build/tts/47094fb400e710e1.wav"
+    },
+    {
+     "text": "Power slips grip the string in the floor while the connection is made. Then they release, and the top drive lowers the pipe into the well.",
+     "start": 8.037,
+     "dur": 7.957,
+     "audio": "build/tts/603110f8406cde6b.wav"
+    }
+   ]
+  },
+  {
+   "id": "offline",
+   "chapter": 5,
+   "start": 303.2,
+   "dur": 10.36,
+   "frames": 259,
+   "lines": [
+    {
+     "text": "Many rigs on the Norwegian shelf have a second, auxiliary well centre, where machines build stands or run casing offline, in parallel with drilling.",
+     "start": 0.3,
+     "dur": 9.762,
+     "audio": "build/tts/2f6ba545a726e720.wav"
+    }
+   ]
+  },
+  {
+   "id": "cabin",
+   "chapter": 5,
+   "start": 313.56,
+   "dur": 5.92,
+   "frames": 148,
+   "lines": [
+    {
+     "text": "Everything is controlled from the driller's cabin: joystick chairs, surrounded by screens.",
+     "start": 0.3,
+     "dur": 5.333,
+     "audio": "build/tts/cd703ef1c3a896b3.wav"
+    }
+   ]
+  },
+  {
+   "id": "robot",
+   "chapter": 5,
+   "start": 319.48,
+   "dur": 11.92,
+   "frames": 298,
+   "lines": [
+    {
+     "text": "And the next step is already being tested offshore: robot arms on the drill floor, a technology developed right here in Stavanger, to take over the last manual jobs.",
+     "start": 0.3,
+     "dur": 10.837,
+     "audio": "build/tts/60705ccbfc206364.wav"
+    }
+   ]
+  },
+  {
+   "id": "dive",
+   "chapter": 6,
+   "start": 331.4,
+   "dur": 15.6,
+   "frames": 390,
+   "lines": [
+    {
+     "text": "Now let's follow the pipe down.",
+     "start": 2.2,
+     "dur": 1.753,
+     "audio": "build/tts/5b68c612b7a5e896.wav"
+    },
+    {
+     "text": "Through the moonpool, an opening in the middle of the rig, a steel riser runs to the seabed. Across most of the shelf, the water is between one hundred and four hundred metres deep.",
+     "start": 4.373,
+     "dur": 10.935,
+     "audio": "build/tts/e1d5ef81253e40e5.wav"
+    }
+   ]
+  },
+  {
+   "id": "bop",
+   "chapter": 6,
+   "start": 347.0,
+   "dur": 13.6,
+   "frames": 340,
+   "lines": [
+    {
+     "text": "On the seabed stands the blowout preventer, or BOP: a stack of massive hydraulic valves as tall as a four-storey building, weighing hundreds of tonnes, and rated to fifteen thousand psi.",
+     "start": 0.3,
+     "dur": 12.906,
+     "audio": "build/tts/a7c92f1d58840c06.wav"
+    }
+   ]
+  },
+  {
+   "id": "tophole",
+   "chapter": 6,
+   "start": 360.6,
+   "dur": 13.2,
+   "frames": 330,
+   "lines": [
+    {
+     "text": "A well is built like a telescope.",
+     "start": 0.3,
+     "dur": 1.892,
+     "audio": "build/tts/2a5f99a828b74c13.wav"
+    },
+    {
+     "text": "The first sections, the top hole, are drilled before the BOP is in place. A thirty-inch conductor goes in first, then twenty-inch casing that carries the wellhead.",
+     "start": 2.612,
+     "dur": 10.278,
+     "audio": "build/tts/88fe437d8c90d115.wav"
+    }
+   ]
+  },
+  {
+   "id": "casing",
+   "chapter": 6,
+   "start": 373.8,
+   "dur": 23.04,
+   "frames": 576,
+   "lines": [
+    {
+     "text": "Then the BOP and riser are latched on, and the well goes deeper in steps. Drill a section, run steel casing into it, and cement it in place.",
+     "start": 0.3,
+     "dur": 9.237,
+     "audio": "build/tts/7422126f8a9fd119.wav"
+    },
+    {
+     "text": "Thirteen and three-eighths inch. Nine and five-eighths. Each section narrower, each one cemented and pressure tested, until the bit reaches the reservoir, typically two to five kilometres down.",
+     "start": 9.957,
+     "dur": 12.281,
+     "audio": "build/tts/5018347f60614f8d.wav"
+    }
+   ]
+  },
+  {
+   "id": "mud_loop",
+   "chapter": 7,
+   "start": 396.84,
+   "dur": 36.16,
+   "frames": 904,
+   "lines": [
+    {
+     "text": "The lifeblood of every well is drilling fluid, known simply as mud.",
+     "start": 2.2,
+     "dur": 3.812,
+     "audio": "build/tts/0bfea1e7311981f2.wav"
+    },
+    {
+     "text": "Four giant pumps, each around two thousand two hundred horsepower, push mud at up to seven thousand five hundred psi down through the drill pipe.",
+     "start": 6.432,
+     "dur": 8.886,
+     "audio": "build/tts/14a115ce89c63145.wav"
+    },
+    {
+     "text": "It jets out of nozzles in the bit, cooling it and sweeping away the rock cuttings, then flows back up the annulus, the gap between the pipe and the wall of the hole.",
+     "start": 15.738,
+     "dur": 9.472,
+     "audio": "build/tts/cfe49ad86c250ccb.wav"
+    },
+    {
+     "text": "Back on the rig, vibrating shale shakers screen out the cuttings. Degassers and centrifuges clean the mud, and it returns to the pits, ready to go down again.",
+     "start": 25.63,
+     "dur": 10.245,
+     "audio": "build/tts/74d85599977e7049.wav"
+    }
+   ]
+  },
+  {
+   "id": "mud_barrier",
+   "chapter": 7,
+   "start": 433.0,
+   "dur": 9.16,
+   "frames": 229,
+   "lines": [
+    {
+     "text": "But mud does more than carry rock. Its weight pushes back against the pressure in the formation. The mud column is the well's first barrier.",
+     "start": 0.3,
+     "dur": 8.576,
+     "audio": "build/tts/da6d26fac7eb50c2.wav"
+    }
+   ]
+  },
+  {
+   "id": "cuttings",
+   "chapter": 7,
+   "start": 442.16,
+   "dur": 14.32,
+   "frames": 358,
+   "lines": [
+    {
+     "text": "And nothing contaminated goes overboard. Since 1993, Norway has banned discharging cuttings soaked in oil-based mud. They are injected back underground, or shipped to shore for treatment.",
+     "start": 0.3,
+     "dur": 13.205,
+     "audio": "build/tts/28b167f92b3a3a91.wav"
+    }
+   ]
+  },
+  {
+   "id": "bha",
+   "chapter": 8,
+   "start": 456.48,
+   "dur": 13.4,
+   "frames": 335,
+   "lines": [
+    {
+     "text": "At the very bottom of the string is the bottom-hole assembly.",
+     "start": 2.2,
+     "dur": 3.497,
+     "audio": "build/tts/8f68442ace8e1db3.wav"
+    },
+    {
+     "text": "The bit is a PDC bit: rows of synthetic diamond cutters that shear the rock, like a plane shaving wood.",
+     "start": 6.117,
+     "dur": 6.974,
+     "audio": "build/tts/e61dde9931951376.wav"
+    }
+   ]
+  },
+  {
+   "id": "rss",
+   "chapter": 8,
+   "start": 469.88,
+   "dur": 9.68,
+   "frames": 242,
+   "lines": [
+    {
+     "text": "Just above it is a rotary steerable system. Pads push against the wall of the hole to steer the bit in any direction, while the whole string keeps turning.",
+     "start": 0.3,
+     "dur": 9.088,
+     "audio": "build/tts/e8833c48d361fa4d.wav"
+    }
+   ]
+  },
+  {
+   "id": "mwd",
+   "chapter": 8,
+   "start": 479.56,
+   "dur": 26.2,
+   "frames": 655,
+   "lines": [
+    {
+     "text": "Above that are the sensors, for measurement and logging while drilling. They read gamma rays, resistivity, density and pressure, so the team knows exactly where the bit is, and what it's drilling through.",
+     "start": 0.3,
+     "dur": 12.181,
+     "audio": "build/tts/5f193be2b04e803a.wav"
+    },
+    {
+     "text": "The data travels to the surface as pressure pulses in the mud, at just a few bits per second. Or, with wired drill pipe, through cables built into the pipe itself, around ten thousand times faster.",
+     "start": 12.901,
+     "dur": 13.013,
+     "audio": "build/tts/36b893746385dc16.wav"
+    }
+   ]
+  },
+  {
+   "id": "geosteer",
+   "chapter": 8,
+   "start": 505.76,
+   "dur": 12.76,
+   "frames": 319,
+   "lines": [
+    {
+     "text": "That's what makes geosteering possible: guiding the well along a reservoir layer just a few metres thick, with deep-reading electromagnetic tools that map the rock tens of metres around the bit.",
+     "start": 0.3,
+     "dur": 12.16,
+     "audio": "build/tts/e8e612f8e5a6ab13.wav"
+    }
+   ]
+  },
+  {
+   "id": "record",
+   "chapter": 8,
+   "start": 518.52,
+   "dur": 22.96,
+   "frames": 574,
+   "lines": [
+    {
+     "text": "The results can be spectacular. In 2025, Aker BP used the rig Deepsea Stavanger to drill one exploration well with eight branches: forty-five thousand metres of hole in about three months. Its longest branch reached ten thousand, six hundred and sixty-six metres, the longest wellbore ever drilled on the Norwegian shelf.",
+     "start": 0.3,
+     "dur": 21.76,
+     "audio": "build/tts/6ed63a1e695563bf.wav"
+    }
+   ]
+  },
+  {
+   "id": "barriers",
+   "chapter": 9,
+   "start": 541.48,
+   "dur": 23.28,
+   "frames": 582,
+   "lines": [
+    {
+     "text": "Offshore, one rule matters above all: barriers.",
+     "start": 2.2,
+     "dur": 2.979,
+     "audio": "build/tts/43f2b193eef6699f.wav"
+    },
+    {
+     "text": "Under the Norwegian standard NORSOK D-010, a well must always have two independent barriers between the reservoir and the surface.",
+     "start": 5.599,
+     "dur": 8.356,
+     "audio": "build/tts/0d479a24d8656f67.wav"
+    },
+    {
+     "text": "While drilling, the primary barrier is the mud column. The secondary barrier is the casing, the cement, the wellhead and the blowout preventer.",
+     "start": 14.375,
+     "dur": 8.62,
+     "audio": "build/tts/be63b2d6327f5189.wav"
+    }
+   ]
+  },
+  {
+   "id": "kick",
+   "chapter": 9,
+   "start": 564.76,
+   "dur": 16.0,
+   "frames": 400,
+   "lines": [
+    {
+     "text": "If the formation pressure ever exceeds the pressure of the mud, gas or oil can push into the well. That's called a kick.",
+     "start": 0.3,
+     "dur": 7.344,
+     "audio": "build/tts/9870f996b0a5b2ff.wav"
+    },
+    {
+     "text": "Sensors constantly watch the mud volume in the pits and the flow out of the well. Even a small gain sets off an alarm.",
+     "start": 8.064,
+     "dur": 7.637,
+     "audio": "build/tts/23d3a9799c5c307e.wav"
+    }
+   ]
+  },
+  {
+   "id": "shutin",
+   "chapter": 9,
+   "start": 580.76,
+   "dur": 14.16,
+   "frames": 354,
+   "lines": [
+    {
+     "text": "The driller shuts in the well with the BOP, then circulates the kick out through a choke, while heavier mud is pumped in to regain control.",
+     "start": 0.3,
+     "dur": 7.957,
+     "audio": "build/tts/91ceb3234f249852.wav"
+    },
+    {
+     "text": "And if everything else fails, shear rams can cut straight through the drill pipe and seal the well.",
+     "start": 8.677,
+     "dur": 5.179,
+     "audio": "build/tts/703c1f4ef7aa0d33.wav"
+    }
+   ]
+  },
+  {
+   "id": "mpd",
+   "chapter": 9,
+   "start": 594.92,
+   "dur": 11.24,
+   "frames": 281,
+   "lines": [
+    {
+     "text": "Many wells now use managed pressure drilling, where automated chokes and pumps hold the pressure at the bottom of the hole inside a narrow window, second by second.",
+     "start": 0.3,
+     "dur": 10.155,
+     "audio": "build/tts/4f33fe5fe4db2999.wav"
+    }
+   ]
+  },
+  {
+   "id": "data",
+   "chapter": 10,
+   "start": 606.16,
+   "dur": 19.28,
+   "frames": 482,
+   "lines": [
+    {
+     "text": "The modern rig is also a data centre.",
+     "start": 2.2,
+     "dur": 2.475,
+     "audio": "build/tts/147199d08deca773.wav"
+    },
+    {
+     "text": "Thousands of sensors stream data ashore to operations centres in cities like Stavanger, where specialists support several rigs at once. Directional drillers, mud engineers and cementers increasingly work from land.",
+     "start": 5.095,
+     "dur": 13.877,
+     "audio": "build/tts/68faa239c82748c1.wav"
+    }
+   ]
+  },
+  {
+   "id": "auto",
+   "chapter": 10,
+   "start": 625.44,
+   "dur": 28.56,
+   "frames": 714,
+   "lines": [
+    {
+     "text": "In February 2025, on an Equinor well in the North Sea, Halliburton and the Norwegian company Sekal ran the world's first automated on-bottom drilling system.",
+     "start": 0.3,
+     "dur": 10.603,
+     "audio": "build/tts/080b91b62b4e1f99.wav"
+    },
+    {
+     "text": "In a closed loop, software steers the well, manages vibration and hole cleaning, and controls the rig's machines, while digital safeguards watch for anything abnormal.",
+     "start": 11.323,
+     "dur": 10.368,
+     "audio": "build/tts/3e31c9c835e07f95.wav"
+    },
+    {
+     "text": "Digital twins model the well in real time, and AI helps spot problems before they happen.",
+     "start": 22.111,
+     "dur": 5.653,
+     "audio": "build/tts/ac5636c4f8a16815.wav"
+    }
+   ]
+  },
+  {
+   "id": "battery",
+   "chapter": 11,
+   "start": 654.0,
+   "dur": 20.2,
+   "frames": 505,
+   "lines": [
+    {
+     "text": "Norway is also pushing hard to cut emissions from drilling.",
+     "start": 2.2,
+     "dur": 3.642,
+     "audio": "build/tts/a515867612fc80b0.wav"
+    },
+    {
+     "text": "Hybrid rigs carry big battery banks that absorb power peaks and act as instant backup, so fewer engines need to run. On Transocean Spitsbergen, a battery system cut fuel use by about fifteen percent.",
+     "start": 6.262,
+     "dur": 13.653,
+     "audio": "build/tts/e300bc2f880bded0.wav"
+    }
+   ]
+  },
+  {
+   "id": "shore",
+   "chapter": 11,
+   "start": 674.2,
+   "dur": 16.48,
+   "frames": 412,
+   "lines": [
+    {
+     "text": "Some rigs are plugging into the shore. The jack-up Askepott was rebuilt to draw power through the Martin Linge platform, from a cable over one hundred and sixty kilometres long, cutting an expected twenty thousand tonnes of carbon dioxide a year.",
+     "start": 0.3,
+     "dur": 15.872,
+     "audio": "build/tts/f27d6c2be5323f15.wav"
+    }
+   ]
+  },
+  {
+   "id": "wind",
+   "chapter": 11,
+   "start": 690.68,
+   "dur": 15.24,
+   "frames": 381,
+   "lines": [
+    {
+     "text": "Johan Sverdrup, one of the biggest fields, runs on power from shore at under one kilogram of CO2 per barrel. And at Snorre and Gullfaks, the floating wind farm Hywind Tampen supplies around a third of the power.",
+     "start": 0.3,
+     "dur": 14.141,
+     "audio": "build/tts/41dcdbac77b713d2.wav"
+    }
+   ]
+  },
+  {
+   "id": "complete",
+   "chapter": 12,
+   "start": 705.92,
+   "dur": 15.0,
+   "frames": 375,
+   "lines": [
+    {
+     "text": "When the well reaches its target, it is completed: screens and production tubing go in, a Christmas tree of valves is installed on the seabed, and the rig pulls its anchors and moves on to the next well.",
+     "start": 2.2,
+     "dur": 12.509,
+     "audio": "build/tts/b20ccc6a6a8ee3cb.wav"
+    }
+   ]
+  },
+  {
+   "id": "future",
+   "chapter": 12,
+   "start": 720.92,
+   "dur": 18.44,
+   "frames": 461,
+   "lines": [
+    {
+     "text": "And the work isn't slowing down. New rig contracts already stretch towards 2035, and more rigs are heading for the Norwegian shelf.",
+     "start": 0.3,
+     "dur": 8.491,
+     "audio": "build/tts/1c26fa1938cdaa65.wav"
+    },
+    {
+     "text": "Floating steel, robotic hands and software that drills on its own, all guided by people who live two weeks at a time in the middle of the sea.",
+     "start": 9.211,
+     "dur": 8.843,
+     "audio": "build/tts/757a396ca7de1fca.wav"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "chapter": 12,
+   "start": 739.36,
+   "dur": 8.72,
+   "frames": 218,
+   "lines": [
+    {
+     "text": "That is how a drilling rig in Norway works.",
+     "start": 0.3,
+     "dur": 2.42,
+     "audio": "build/tts/c8c33509172b34f8.wav"
+    }
+   ]
+  }
+ ]
+}
