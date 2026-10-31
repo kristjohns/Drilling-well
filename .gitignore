@@ -6,3 +6,4 @@ video/audio/*.wav
 media/
 deliverables/*_concat.mp4
 deliverables/concat.txt
+video/compare/audio/*.wav

@@ -179,10 +179,57 @@ def fig_bars():
     plt.close(fig)
 
 
+def fig_foundation():
+    C = json.load(open(os.path.join(HERE, "results", "compare.json")))
+    F, Rr = C["base_free"], C["base_restrained"]
+    z = np.array(F["z"])
+    m = z <= 200
+    fig, (a, b) = plt.subplots(1, 2, figsize=(10, 5.6), sharey=True)
+    a.plot(np.array(F["N_MN"])[m], z[m], color=FREE, label="free wellhead")
+    a.plot(np.array(Rr["N_MN"])[m], z[m], color=RESTR, label="restrained wellhead")
+    a.axvline(0, color=INK, lw=1)
+    a.axhline(80, color=INK2, lw=0.8, ls=(0, (4, 3)))
+    a.text(-16.5, 77, "conductor shoe 80 m", fontsize=9, color=INK2, va="bottom")
+    a.axhspan(112, 200, color="#1baf7a", alpha=0.08, lw=0)
+    a.text(-16.5, 160, "identical in both cases:\ncement + rock already hold the 20\"", fontsize=9, color=INK)
+    a.annotate(f"+{F['N_MN'][0]:.1f} MN (tension)", (F["N_MN"][0], 0), (-1, 25), fontsize=9,
+               arrowprops=dict(arrowstyle="-", color=INK2, lw=0.8))
+    a.annotate(f"{Rr['N_MN'][0]:.1f} MN", (Rr["N_MN"][0], 0), (-13.5, 40), fontsize=9,
+               arrowprops=dict(arrowstyle="-", color=INK2, lw=0.8))
+    depth_ax(a, 200, "axial force, conductor + 20\" + cement [MN]  (tension +)")
+    a.set_xlim(-17, 6)
+    a.set_title("Foundation axial force", pad=34)
+    a.legend(loc="lower right")
+    for key, col in (("s20_MPa", None), ("s30_MPa", None)):
+        pass
+    b.plot([v for v, zz in zip(F["s20_MPa"], z) if v is not None and zz <= 200],
+           [zz for v, zz in zip(F["s20_MPa"], z) if v is not None and zz <= 200], color=FREE, label='20", free')
+    b.plot([v for v, zz in zip(Rr["s20_MPa"], z) if v is not None and zz <= 200],
+           [zz for v, zz in zip(Rr["s20_MPa"], z) if v is not None and zz <= 200], color=RESTR, label='20", restrained')
+    b.plot([v for v in F["s30_MPa"] if v is not None], [zz for v, zz in zip(F["s30_MPa"], z) if v is not None],
+           color=FREE, ls=(0, (4, 2)), label='30", free')
+    b.plot([v for v in Rr["s30_MPa"] if v is not None], [zz for v, zz in zip(Rr["s30_MPa"], z) if v is not None],
+           color=RESTR, ls=(0, (4, 2)), label='30", restrained')
+    b.axvline(0, color=INK, lw=1)
+    b.axvline(-379, color=INK2, lw=0.8, ls=(0, (2, 2)))
+    b.text(-375, 196, "K-55 yield", fontsize=9, color=INK2)
+    pk = Rr["s20_min"]
+    b.annotate(f"{pk['MPa']:.0f} MPa locally below\nthe conductor shoe", (pk["MPa"], pk["z"]), (-360, 120), fontsize=9,
+               arrowprops=dict(arrowstyle="-", color=INK2, lw=0.8))
+    depth_ax(b, 200, "steel axial stress change [MPa]  (tension +)")
+    b.set_xlim(-400, 70)
+    b.set_title("Steel stress in conductor and surface casing", pad=34)
+    b.legend(loc="lower right", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(os.path.join(OUT, "fig7_foundation_profiles.png"), dpi=160)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     fig_temperature()
     fig_effective_force()
     fig_restraint_sweep()
     fig_time()
     fig_bars()
+    fig_foundation()
     print("figures in", OUT)

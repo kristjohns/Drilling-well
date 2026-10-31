@@ -18,11 +18,16 @@
 3. **In this example the buckling is elastic.** Peak von Mises stress is 229 MPa in the 13⅜" L-80 (42 % of yield) and 155 MPa in the 9⅝" P-110 (20 %). Helical bending adds up to ~57 MPa. The contact force against the outer string is ~1.9 kN/m.
 4. **The real cost of the restraint lands on the foundation and on the restraint itself.**
    - The conductor and surface casing can no longer expand at the seabed. Their thermal strain becomes compression: about **−144 MPa in the 30"** and **−180 MPa in the 20"** (≈ 47 % of K-55 yield) from heating alone.
+   - Just below the conductor shoe, where the restrained conductor hands its compression over to the 20", the 20" reaches **≈ −308 MPa locally** (≈ 81 % of yield, model estimate). With a free wellhead the same point is at −189 MPa.
+   - Below about 110 m the two cases are identical: cement and rock already lock the surface casing completely. The whole difference sits in the top ~100 m, where soft soil lets the conductor slide (§4a).
    - The restraint must hold down about **19.5 MN (≈ 2 000 t)**.
    - Even halving the growth takes ≈ 8.5 MN.
 5. **There is one case where the restraint changes things dramatically for a casing:** a surface casing that is *not* cemented to the seabed. With a 200 m free length of 20" inside the conductor, restraining the wellhead raises the 20" compression from 2.5 MN to 4.2 MN (+68 %). The 20" then buckles into a ~53 m-pitch helix inside the conductor (σ_vM ≈ 236 MPa, 62 % of yield).
 
-The explainer video walks through all of this: `deliverables/restrained_wellhead_growth_explainer.mp4`, with English subtitles in the `.srt` next to it.
+Two videos accompany this report, each with English subtitles in the `.srt` next to it:
+
+- **The full explainer:** `deliverables/restrained_wellhead_growth_explainer.mp4` (12.4 min).
+- **A side-by-side comparison of the free and restrained cases:** `deliverables/free_vs_restrained_wellhead_comparison.mp4` (≈ 7 min).
 
 ---
 
@@ -194,6 +199,49 @@ Compared with the 1.1–2.2 m the inner strings "want", 61 mm is almost nothing.
 
 ---
 
+## 4a. Free vs. restrained, side by side
+
+**Forces on the wellhead (1 year).**
+
+| | Free | Restrained |
+|---|---|---|
+| Inner strings push up | 4.1 MN | 4.3 MN |
+| Conductor + 20" at the seabed | pulls down 4.1 MN (tension) | pushes up 15.2 MN (blocked thermal expansion) |
+| Restraint | – | pushes down 19.5 MN |
+| Wellhead movement | +61 mm | 0 |
+
+**Where the difference sits (Fig. 7).**
+- **Free wellhead.** The top of the conductor/20" composite is in tension (+4.1 MN), because it holds the inner strings back. A few tens of metres down, soil friction takes over and the composite's own thermal expansion turns into compression.
+- **Restrained wellhead.** The full thermal compression (≈ −15 MN) reaches all the way up to the wellhead.
+- **Below ≈ 110 m the curves are identical.** Cement and rock already hold the 20" completely, so it carries its full restrained thermal stress (≈ −181 MPa) in both cases.
+- **The conductor shoe.** In the restrained case the conductor's compression has to be handed to the 20" and the soil at the conductor shoe. This gives a local peak of ≈ −308 MPa in the 20" just below 80 m (model estimate, sensitive to how load transfers at the shoe), against −189 MPa with a free wellhead.
+
+![Foundation profiles](figures/fig7_foundation_profiles.png)
+
+*Fig. 7 – Axial force in the conductor + 20" + cement composite (left) and steel stress in the 20" and 30" (right), free vs. restrained wellhead.*
+
+**Time and cycling.**
+- The free wellhead grows ≈ 32 mm after 1 day, 41 mm after 1 week, 49 mm after 1 month and 61 mm after 1 year.
+- With the wellhead restrained, the force over the same times is 11.9, 14.5, 16.6 and 19.5 MN.
+- Every shut-in and start-up cycles the movement (free) or the full force (restrained). For a restrained well this is a fatigue load on the restraint, the conductor and the wellhead housing.
+
+**Scoreboard**
+
+| Quantity | Free | Restrained | Change |
+|---|---|---|---|
+| Wellhead growth | 61 mm | 0 | – |
+| 13⅜" added compression | 2.20 MN | 2.32 MN | +5 % |
+| 9⅝" added compression | 1.51 MN | 1.56 MN | +3 % |
+| 9⅝" buckled below | 690 m | 594 m | +96 m buckled pipe |
+| 13⅜" max von Mises | 217 MPa | 229 MPa | 39 → 42 % of yield |
+| 13⅜" hanger uplift | 0.91 MN | 1.04 MN | +13 % |
+| 30" stress at seabed | +44 MPa | −144 MPa | −188 MPa |
+| 20" stress at seabed | +8 MPa | −180 MPa | −188 MPa |
+| 20" peak (below conductor shoe) | −189 MPa | ≈ −308 MPa | 50 → 81 % of yield |
+| Restraint force | 0 | 19.5 MN | ≈ 2 000 t |
+
+---
+
 ## 5. Effective force and buckling
 
 Buckling of a fluid-filled pipe in fluid is governed by the **effective force** (Lubinski et al., 1962), not by the true axial force in the steel:
@@ -273,7 +321,8 @@ Here the restraint changes the outcome for a casing string. The 20" goes from mo
 
 - **Foundation and restraint.**
   - The restraint must carry the full reaction, ~20 MN here.
-  - The conductor/20" near the seabed see 150–180 MPa of extra compression, on top of wellhead weight, riser/BOP loads and fatigue loading.
+  - The conductor/20" near the seabed see 150–190 MPa of extra compression, on top of wellhead weight, riser/BOP loads and fatigue loading.
+  - The 20" just below the conductor shoe sees the peak (≈ −308 MPa locally in this model). Check this location explicitly.
   - The HPWH/LPWH interface and any template or suction-anchor connection must be checked for this load.
 - **Casing hanger lockdown.** The top of the 13⅜" is in compression (true axial force ≈ −1.0 MN at the hanger). The hanger pushes up on its lockdown ring, and lift-off would endanger the annulus seal.
 - **Connections.** They must be rated for compression plus helical bending; API buttress compression efficiency is limited.
@@ -317,7 +366,7 @@ python analysis/run_cases.py      # writes analysis/results/results.json
 python analysis/make_figures.py   # writes report/figures/*.png
 ```
 
-The video is generated from `video/`. Narration: `narration.py` → `make_tts.py`, using the Kokoro-82M neural TTS. Animation: Manim Community scenes `scenes_a…e.py`. Assembly: `build_video.py`.
+The videos are generated from `video/`. Narration: `narration.py` (main) or `compare/narration_cmp.py` (comparison), voiced by `make_tts.py [--variant compare]` with the Kokoro-82M neural TTS. Animation: Manim Community scenes `scenes_a…e.py` and `compare/scenes_cmp_a…d.py`, rendered with `VIDEO_VARIANT=compare` for the comparison. Assembly: `build_video.py [--variant compare]`. `analysis/export_compare.py` writes the full-resolution foundation profiles used in Fig. 7 and the comparison video.
 
 ---
 

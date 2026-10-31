@@ -11,10 +11,12 @@ from manim import *  # noqa: F401,F403
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-AUDIO = os.path.join(HERE, "audio")
+VARIANT = os.environ.get("VIDEO_VARIANT", "main")      # "main" or "compare"
+_VDIR = os.path.join(HERE, "compare") if VARIANT == "compare" else HERE
+AUDIO = os.path.join(_VDIR, "audio")
 DUR = json.load(open(os.path.join(AUDIO, "durations.json")))
 RES = json.load(open(os.path.join(ROOT, "analysis", "results", "results.json")))
-TIMING_DIR = os.path.join(HERE, "timings")
+TIMING_DIR = os.path.join(_VDIR, "timings")
 os.makedirs(TIMING_DIR, exist_ok=True)
 
 # ------------------------------------------------------------------ palette

@@ -6,11 +6,19 @@ What happens to the casing strings of a subsea well when production heats them u
 
 - **Report:** [`report/REPORT.md`](report/REPORT.md) covers the well setup, how temperature is applied, the mechanics, effective force and helical buckling, results and assumptions.
 - **Explainer video:** `deliverables/restrained_wellhead_growth_explainer.mp4` (≈ 12.5 min, narrated, with English subtitles in the `.srt`).
+- **Comparison video:** `deliverables/free_vs_restrained_wellhead_comparison.mp4` (≈ 7 min). It runs the free and restrained wellhead side by side and covers:
+  - the heat-up;
+  - the forces on the wellhead;
+  - the conductor and surface casing force and stress profiles;
+  - the inner casings and their buckling;
+  - a scoreboard of the key numbers;
+  - partial restraint and load cycling;
+  - the uncemented-20" case.
 - **Model:** [`analysis/`](analysis) is a 1-D multi-string thermal–mechanical model with standard API casing (30", 20", 13⅜", 9⅝", 5½").
   - `wellmodel.py`: thermal model (Ramey / Hasan–Kabir + radial resistance network), hung strings with ballooning and helical buckling (Lubinski / Mitchell / Wu–Juvkam-Wold), conductor/surface-casing foundation on t–z soil springs, and wellhead equilibrium (free, spring-restrained or fully restrained).
   - `run_cases.py`: runs all cases and writes `results/results.json`.
   - `make_figures.py`: makes the report figures.
-- **Video source:** [`video/`](video) contains the narration script, TTS generation, Manim scenes and the assembly script.
+- **Video source:** [`video/`](video) contains the narration script, TTS generation, Manim scenes and the assembly script. The comparison video's scenes and narration are in `video/compare/`.
 
 ### Key result (base case, 1 year of production, WHFT ≈ 108 °C)
 

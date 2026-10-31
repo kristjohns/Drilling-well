@@ -1,0 +1,519 @@
+1
+00:00:00,050 --> 00:00:00,591
+Same well.
+
+2
+00:00:00,691 --> 00:00:01,617
+Same production.
+
+3
+00:00:01,717 --> 00:00:02,258
+Same heat.
+
+4
+00:00:02,358 --> 00:00:05,912
+The only difference is one boundary condition at the top.
+
+5
+00:00:06,012 --> 00:00:09,053
+On the left, the wellhead is free to grow upward.
+
+6
+00:00:09,153 --> 00:00:13,861
+On the right, the wellhead and the conductor are held, so they cannot move.
+
+7
+00:00:14,383 --> 00:00:16,738
+Let's compare the two cases side by side.
+
+8
+00:00:16,838 --> 00:00:21,167
+The heat up, the forces on the wellhead, the conductor and surface casing,
+
+9
+00:00:21,267 --> 00:00:23,382
+the inner casings and their buckling.
+
+10
+00:00:23,482 --> 00:00:26,495
+And let's find out where the difference really lies.
+
+11
+00:00:27,817 --> 00:00:28,856
+Production starts.
+
+12
+00:00:28,956 --> 00:00:33,982
+Oil at about one hundred and eight degrees warms the casings from the inside out,
+
+13
+00:00:34,082 --> 00:00:36,324
+and every string wants to get longer.
+
+14
+00:00:36,424 --> 00:00:40,944
+The free sections of the inner casings want to grow by one to two metres.
+
+15
+00:00:41,483 --> 00:00:43,465
+On the left, the wellhead rises.
+
+16
+00:00:43,565 --> 00:00:48,602
+After one day it has grown about thirty millimetres, after a month about fifty,
+
+17
+00:00:48,702 --> 00:00:53,805
+and after a year about sixty one, as the conductor and the surface casing slowly
+
+18
+00:00:53,905 --> 00:00:54,326
+warm up.
+
+19
+00:00:54,850 --> 00:00:56,540
+On the right, nothing moves.
+
+20
+00:00:56,640 --> 00:00:59,288
+Instead, the force on the restraint climbs.
+
+21
+00:00:59,388 --> 00:01:03,251
+About twelve meganewtons after a day, seventeen after a month,
+
+22
+00:01:03,351 --> 00:01:05,616
+and nineteen and a half after a year.
+
+23
+00:01:05,716 --> 00:01:09,963
+The same thermal expansion, showing up as force instead of movement.
+
+24
+00:01:11,883 --> 00:01:13,253
+The principle is simple.
+
+25
+00:01:13,353 --> 00:01:17,600
+A heated steel member that is free to move gets longer, with no stress.
+
+26
+00:01:17,700 --> 00:01:20,540
+A member that cannot move stays the same length,
+
+27
+00:01:20,640 --> 00:01:25,254
+and instead carries about two and a half megapascals of compression for every
+
+28
+00:01:25,354 --> 00:01:25,683
+degree.
+
+29
+00:01:25,783 --> 00:01:28,745
+Movement and force are two sides of the same coin.
+
+30
+00:01:29,983 --> 00:01:33,068
+The well is a set of springs tied to one wellhead.
+
+31
+00:01:33,168 --> 00:01:35,998
+The long, free inner casings are soft springs.
+
+32
+00:01:36,098 --> 00:01:40,712
+The conductor and the cemented surface casing, gripped by cement and soil,
+
+33
+00:01:40,812 --> 00:01:44,661
+form one very stiff spring, more than a hundred times stiffer.
+
+34
+00:01:45,183 --> 00:01:47,992
+That stiffness ratio decides almost everything.
+
+35
+00:01:48,092 --> 00:01:50,158
+Because the foundation is so stiff,
+
+36
+00:01:50,258 --> 00:01:54,738
+the inner strings cannot push the wellhead very far, even when it is free.
+
+37
+00:01:54,838 --> 00:01:59,751
+They are already held back, and carry ninety to ninety six percent of their fully
+
+38
+00:01:59,851 --> 00:02:00,742
+restrained load.
+
+39
+00:02:02,683 --> 00:02:05,777
+Now look at the forces acting on the wellhead itself.
+
+40
+00:02:05,877 --> 00:02:10,417
+With a free wellhead, the hot inner strings push up with about four point one
+
+41
+00:02:10,517 --> 00:02:11,140
+meganewtons.
+
+42
+00:02:11,240 --> 00:02:16,021
+The wellhead rises until the conductor and surface casing are stretched enough to
+
+43
+00:02:16,121 --> 00:02:18,371
+pull back with the same four point one.
+
+44
+00:02:18,471 --> 00:02:19,696
+The net force is zero.
+
+45
+00:02:20,217 --> 00:02:24,410
+With the wellhead restrained, the inner strings push up slightly harder,
+
+46
+00:02:24,510 --> 00:02:26,140
+four point three meganewtons.
+
+47
+00:02:26,240 --> 00:02:29,778
+But now the conductor and the surface casing push up as well,
+
+48
+00:02:29,878 --> 00:02:34,310
+with about fifteen meganewtons, because their own expansion at the seabed is
+
+49
+00:02:34,410 --> 00:02:34,787
+blocked.
+
+50
+00:02:34,887 --> 00:02:36,874
+The restraint has to react the sum.
+
+51
+00:02:36,974 --> 00:02:41,347
+Nineteen and a half meganewtons, roughly the weight of two thousand tonnes.
+
+52
+00:02:42,683 --> 00:02:45,156
+This is where the two cases really differ.
+
+53
+00:02:45,256 --> 00:02:49,260
+Here is the axial force along the conductor and the surface casing,
+
+54
+00:02:49,360 --> 00:02:51,097
+in the top two hundred metres.
+
+55
+00:02:51,197 --> 00:02:53,914
+Tension to the right, compression to the left.
+
+56
+00:02:54,450 --> 00:02:54,672
+Free.
+
+57
+00:02:54,772 --> 00:02:58,471
+At the seabed, the inner strings pull the composite upward,
+
+58
+00:02:58,571 --> 00:03:00,081
+so the top is in tension.
+
+59
+00:03:00,181 --> 00:03:03,430
+A few tens of metres down, soil friction takes over,
+
+60
+00:03:03,530 --> 00:03:07,422
+and the casing's own thermal expansion turns into compression.
+
+61
+00:03:07,950 --> 00:03:08,517
+Restrained.
+
+62
+00:03:08,617 --> 00:03:13,369
+The top is locked, so the full thermal compression reaches all the way up to the
+
+63
+00:03:13,469 --> 00:03:13,915
+wellhead.
+
+64
+00:03:14,015 --> 00:03:16,341
+About fifteen meganewtons at the seabed.
+
+65
+00:03:16,883 --> 00:03:20,518
+Below about a hundred metres, the two curves are identical.
+
+66
+00:03:20,618 --> 00:03:25,201
+Cement and rock already hold the surface casing completely, in both cases.
+
+67
+00:03:25,301 --> 00:03:28,493
+The whole difference sits in the top hundred metres,
+
+68
+00:03:28,593 --> 00:03:31,341
+where the soft soil lets the conductor slide.
+
+69
+00:03:31,883 --> 00:03:36,384
+In the steel, that is a change of about one hundred and ninety megapascals at the
+
+70
+00:03:36,484 --> 00:03:36,782
+seabed.
+
+71
+00:03:36,882 --> 00:03:41,042
+From plus forty four, to minus one hundred and forty four in the conductor,
+
+72
+00:03:41,142 --> 00:03:45,131
+and from plus eight, to minus one hundred and eighty in the twenty inch.
+
+73
+00:03:45,231 --> 00:03:49,164
+Just below the conductor shoe, where the conductor hands its load over,
+
+74
+00:03:49,264 --> 00:03:53,538
+the twenty inch locally reaches about three hundred megapascals in our model.
+
+75
+00:03:53,638 --> 00:03:55,299
+Around eighty percent of yield.
+
+76
+00:03:56,617 --> 00:03:57,827
+Now the inner casings.
+
+77
+00:03:57,927 --> 00:04:02,591
+The thirteen and three eighths picks up two point two meganewtons of compression
+
+78
+00:04:02,691 --> 00:04:06,045
+with a free wellhead, and two point three when restrained.
+
+79
+00:04:06,145 --> 00:04:07,415
+Only five percent more.
+
+80
+00:04:07,950 --> 00:04:13,085
+In both cases its effective force is compressive along the entire thirteen hundred
+
+81
+00:04:13,185 --> 00:04:14,234
+metre free length.
+
+82
+00:04:14,334 --> 00:04:18,639
+So it is helically buckled in both cases, with almost the same pitch,
+
+83
+00:04:18,739 --> 00:04:20,746
+bending stress and contact force.
+
+84
+00:04:21,283 --> 00:04:25,811
+For the nine and five eighths, the buckled zone starts at six hundred and ninety
+
+85
+00:04:25,911 --> 00:04:30,207
+metres with a free wellhead, and at five hundred and ninety four metres when
+
+86
+00:04:30,307 --> 00:04:30,844
+restrained.
+
+87
+00:04:30,944 --> 00:04:35,298
+About a hundred metres more buckled pipe, for three percent more compression.
+
+88
+00:04:35,817 --> 00:04:36,535
+Why so small?
+
+89
+00:04:36,635 --> 00:04:40,122
+When free, the wellhead moves only sixty one millimetres.
+
+90
+00:04:40,222 --> 00:04:44,339
+Compared with the one to two metres the inner strings want to grow,
+
+91
+00:04:44,439 --> 00:04:45,912
+that is almost no relief.
+
+92
+00:04:46,012 --> 00:04:49,752
+Restraining the wellhead takes away a relief they hardly had.
+
+93
+00:04:51,083 --> 00:04:52,745
+Here is the full comparison.
+
+94
+00:04:53,283 --> 00:04:56,014
+For the inner casings, the numbers barely move.
+
+95
+00:04:56,114 --> 00:04:58,423
+Compression rises three to five percent,
+
+96
+00:04:58,523 --> 00:05:03,422
+the highest combined stress in the thirteen and three eighths goes from two hundred
+
+97
+00:05:03,522 --> 00:05:07,939
+and seventeen to two hundred and twenty nine megapascals, well below yield,
+
+98
+00:05:08,039 --> 00:05:12,034
+and the uplift on its hanger from zero point nine to one meganewton.
+
+99
+00:05:12,583 --> 00:05:15,681
+The rows that change dramatically are at the bottom.
+
+100
+00:05:15,781 --> 00:05:19,801
+The conductor and surface casing stresses, and the restraint force,
+
+101
+00:05:19,901 --> 00:05:23,245
+which goes from zero to nineteen and a half meganewtons.
+
+102
+00:05:25,583 --> 00:05:28,216
+In practice, no restraint is perfectly rigid.
+
+103
+00:05:28,316 --> 00:05:32,468
+Any real restraint lands somewhere on this line between the two cases.
+
+104
+00:05:32,568 --> 00:05:37,023
+Halving the growth to twenty eight millimetres still costs eight and a half
+
+105
+00:05:37,123 --> 00:05:37,752
+meganewtons.
+
+106
+00:05:37,852 --> 00:05:41,821
+Roughly a third of a meganewton for every millimetre you take away.
+
+107
+00:05:42,350 --> 00:05:43,942
+And the load comes and goes.
+
+108
+00:05:44,042 --> 00:05:47,810
+Every shut in cools the well, and every start up heats it again.
+
+109
+00:05:47,910 --> 00:05:50,288
+A free wellhead simply moves up and down.
+
+110
+00:05:50,388 --> 00:05:53,733
+A restrained one cycles its full force, on the restraint,
+
+111
+00:05:53,833 --> 00:05:57,661
+the conductor and the wellhead housing, for the life of the well.
+
+112
+00:05:59,583 --> 00:06:03,965
+There is one situation where the comparison changes for a casing string.
+
+113
+00:06:04,065 --> 00:06:07,202
+A surface casing that is not cemented to the seabed.
+
+114
+00:06:07,302 --> 00:06:11,310
+Then the twenty inch has its own free length inside the conductor,
+
+115
+00:06:11,410 --> 00:06:13,426
+and the foundation is much softer.
+
+116
+00:06:13,950 --> 00:06:16,604
+Free, the wellhead grows seventy millimetres,
+
+117
+00:06:16,704 --> 00:06:19,970
+and the twenty inch carries two and a half meganewtons.
+
+118
+00:06:20,070 --> 00:06:22,480
+Restrained, that jumps to four point two.
+
+119
+00:06:22,580 --> 00:06:26,703
+Sixty eight percent more, and it buckles harder inside the conductor.
+
+120
+00:06:26,803 --> 00:06:28,845
+Here, the restraint really matters.
+
+121
+00:06:30,783 --> 00:06:32,580
+So what is the real difference?
+
+122
+00:06:32,680 --> 00:06:34,721
+For the inner casings, very little.
+
+123
+00:06:34,821 --> 00:06:36,923
+They buckle helically in both cases,
+
+124
+00:06:37,023 --> 00:06:39,982
+and the restraint adds only three to five percent.
+
+125
+00:06:40,517 --> 00:06:42,738
+For the conductor, the surface casing,
+
+126
+00:06:42,838 --> 00:06:45,548
+the wellhead housing and the restraint itself,
+
+127
+00:06:45,648 --> 00:06:49,764
+it is the difference between almost no load, and tens of meganewtons,
+
+128
+00:06:49,864 --> 00:06:51,474
+cycling with every start up.
+
+129
+00:06:52,017 --> 00:06:55,448
+Free or restrained, the thermal expansion is the same.
+
+130
+00:06:55,548 --> 00:06:59,634
+The only choice is whether it shows up as movement, or as force.
