@@ -216,7 +216,7 @@ class S02_Architecture(VScene):
                 VGroup(Square(0.22).set_fill(MUD, 1).set_stroke(width=0), T("C annulus: 1.25 SG mud", 18)).arrange(RIGHT, buff=0.15),
                 VGroup(Square(0.22).set_fill(CEMENT, 1).set_stroke(width=0), T("cement", 18)).arrange(RIGHT, buff=0.15),
             ).arrange(DOWN, aligned_edge=LEFT, buff=0.12)
-            leg.move_to([3.35, -2.55, 0])
+            leg.move_to([3.0, -2.95, 0])
             self.play(LaggedStart(FadeIn(la, scale=1.5), FadeIn(lb, scale=1.5), FadeIn(lc, scale=1.5), lag_ratio=0.3),
                       FadeIn(leg), run_time=0.3 * d)
             # open-to-formation markers
