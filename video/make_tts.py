@@ -13,6 +13,7 @@ import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "compare"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "qa"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -26,16 +27,18 @@ def main():
     ap.add_argument("--voice", default="af_heart")
     ap.add_argument("--speed", type=float, default=1.0)
     ap.add_argument("--only", nargs="*")
-    ap.add_argument("--variant", default="main", choices=["main", "compare"])
+    ap.add_argument("--variant", default="main", choices=["main", "compare", "qa"])
     a = ap.parse_args()
     if a.variant == "compare":
         from narration_cmp import SCRIPT
+    elif a.variant == "qa":
+        from narration_qa import SCRIPT
     else:
         from narration import SCRIPT
     from kokoro_onnx import Kokoro
     k = Kokoro(os.path.join(a.model_dir, "kokoro-v1.0.onnx"),
                os.path.join(a.model_dir, "voices-v1.0.bin"))
-    out = os.path.join(HERE, "compare", "audio") if a.variant == "compare" else os.path.join(HERE, "audio")
+    out = os.path.join(HERE, "audio") if a.variant == "main" else os.path.join(HERE, a.variant, "audio")
     os.makedirs(out, exist_ok=True)
     dpath = os.path.join(out, "durations.json")
     durs = json.load(open(dpath)) if os.path.exists(dpath) else {}

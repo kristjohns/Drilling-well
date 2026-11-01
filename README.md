@@ -5,6 +5,10 @@
 What happens to the casing strings of a subsea well when production heats them up and the wellhead and conductor are **not allowed to move upward**?
 
 - **Report:** [`report/REPORT.md`](report/REPORT.md) covers the well setup, how temperature is applied, the mechanics, effective force and helical buckling, results and assumptions.
+- **Complete video (recommended):** `deliverables/restrained_wellhead_growth_complete.mp4` (≈ 27 min). It has chapter markers and subtitles, and combines:
+  - Part 1: the explainer;
+  - Part 2: the free vs. restrained comparison;
+  - Part 3: Q&A on restraint force split, length, buckling/yield limits and why the inner casings are locked in.
 - **Explainer video:** `deliverables/restrained_wellhead_growth_explainer.mp4` (≈ 12.5 min, narrated, with English subtitles in the `.srt`).
 - **Comparison video:** `deliverables/free_vs_restrained_wellhead_comparison.mp4` (≈ 7 min). It runs the free and restrained wellhead side by side and covers:
   - the heat-up;
@@ -18,7 +22,7 @@ What happens to the casing strings of a subsea well when production heats them u
   - `wellmodel.py`: thermal model (Ramey / Hasan–Kabir + radial resistance network), hung strings with ballooning and helical buckling (Lubinski / Mitchell / Wu–Juvkam-Wold), conductor/surface-casing foundation on t–z soil springs, and wellhead equilibrium (free, spring-restrained or fully restrained).
   - `run_cases.py`: runs all cases and writes `results/results.json`.
   - `make_figures.py`: makes the report figures.
-- **Video source:** [`video/`](video) contains the narration script, TTS generation, Manim scenes and the assembly script. The comparison video's scenes and narration are in `video/compare/`.
+- **Video source:** [`video/`](video) contains the narration script, TTS generation, Manim scenes and the assembly script. The comparison video's scenes and narration are in `video/compare/`, the Q&A part is in `video/qa/`, and `video/build_combined.py` assembles the complete video.
 
 ### Key result (base case, 1 year of production, WHFT ≈ 108 °C)
 

@@ -24,7 +24,13 @@
    - Even halving the growth takes ≈ 8.5 MN.
 5. **There is one case where the restraint changes things dramatically for a casing:** a surface casing that is *not* cemented to the seabed. With a 200 m free length of 20" inside the conductor, restraining the wellhead raises the 20" compression from 2.5 MN to 4.2 MN (+68 %). The 20" then buckles into a ~53 m-pitch helix inside the conductor (σ_vM ≈ 236 MPa, 62 % of yield).
 
-Two videos accompany this report, each with English subtitles in the `.srt` next to it:
+**Complete video (recommended):** `deliverables/restrained_wellhead_growth_complete.mp4` (≈ 27 min). It has chapter markers and English subtitles, in three parts:
+
+- Part 1: the physics.
+- Part 2: free vs. restrained, side by side.
+- Part 3: answers to four follow-up questions (§10).
+
+The two parts also exist as separate videos, each with English subtitles in the `.srt` next to it:
 
 - **The full explainer:** `deliverables/restrained_wellhead_growth_explainer.mp4` (12.4 min).
 - **A side-by-side comparison of the free and restrained cases:** `deliverables/free_vs_restrained_wellhead_comparison.mp4` (≈ 7 min).
@@ -370,7 +376,90 @@ The videos are generated from `video/`. Narration: `narration.py` (main) or `com
 
 ---
 
-## 10. References
+## 10. Follow-up questions and answers
+
+These are answered in Part 3 of the complete video.
+
+**Q1. How much of the restraint force is in the surface casing vs. the conductor, and why are the forces so high?**
+
+At the seabed, the 19.5 MN restraint force comes from:
+
+| Source | Force | Share |
+|---|---|---|
+| 30" conductor | 8.5 MN | 43 % |
+| 20" surface casing | 4.5 MN | 23 % |
+| Cement between and around them | 2.2 MN | 11 % |
+| Inner strings | 4.3 MN | 22 % |
+
+The forces are high for four reasons:
+- Blocked thermal expansion gives σ = E·α·ΔT ≈ 2.57 MPa/°C, whatever the pipe size. At the seabed ΔT is 61 °C for the 30" and 75 °C for the 20", giving ≈ 156 / 192 MPa if fully blocked.
+- Force = stress × steel area, and these are heavy pipes:
+
+  | Pipe | Steel area | Force per °C |
+  |---|---|---|
+  | 30" × 1" | 588 cm² | 151 kN/°C |
+  | 20" 133 ppf | 249 cm² | 64 kN/°C |
+  | 13⅜" 72 ppf (for comparison) | 134 cm² | 34 kN/°C |
+
+- Cement and soil hold them sideways, so they cannot buckle to shed load.
+- They are very stiff. Every millimetre of growth prevented costs ≈ 0.32 MN.
+
+**Q2. Doesn't length matter?**
+
+Not for the force.
+- Free growth α·L·ΔT grows with L.
+- Stiffness EA/L falls with L.
+- So F = E·A·α·ΔT is independent of length. A 1,300 m, 650 m and 10 m piece of the same 13⅜" at 71 °C all need 2.43 MN to hold.
+
+Length does matter for:
+- the movement that must be prevented;
+- the length of soil needed to anchor the force. The conductor needs roughly the top 60–100 m; below ≈ 110 m cement and rock lock the 20" locally;
+- how much a given wellhead movement relieves a string (see Q4).
+
+**Q3. What are the buckling and yield limits?**
+
+See the table below. "Yields when buckled" means axial compression plus helical bending at the outer wall.
+
+| String | Pipe-body yield | Buckling onset, vertical (sinusoidal / helical) | Yields when buckled | Load, restrained case |
+|---|---|---|---|---|
+| 30" X-56 | 22.7 MN | none (soil/cement support: 60–280 MN) | – | 8.5 MN (−144 MPa) |
+| 20" K-55, cemented | 9.45 MN | none | – | −180 MPa at seabed; ≈ −308 MPa (81 % of yield) below conductor shoe |
+| 13⅜" L-80 | 7.40 MN | 0.08 / 0.18 MN | 5.2–5.6 MN | 2.3 MN |
+| 9⅝" P-110 | 7.60 MN | 0.04 / 0.08 MN | 5.8 MN | 1.0 MN effective |
+| 5½" 13Cr-80 | 1.77 MN | 0.01 / 0.02 MN | 1.1 MN | 0.4 MN effective |
+
+- Buckling is confined and stable, so the relevant limit for a buckled string is the "yields when buckled" column.
+- At 30° inclination the 13⅜" helical onset rises to ≈ 1.5 MN.
+- A fully blocked pipe starting from zero stress would yield at ΔT ≈ 150 °C (K-55, X-56), 215 °C (L-80, 13Cr-80) or 295 °C (P-110).
+
+**Q4. Why are the inner casings "already locked in"?**
+
+Both ends of each free section are fixed:
+- the bottom by cement;
+- the top by the hanger on its load shoulder plus the lockdown ring.
+
+The only relief is the wellhead rising (61 mm) and helix shortening.
+
+| String | Wants to grow | Wellhead relieves | Helix relieves | Still blocked |
+|---|---|---|---|---|
+| 13⅜" | 1,138 mm | 61 mm | 48 mm | 90 % of full force |
+| 9⅝" | – | – | – | 96 % |
+| 5½" tubing | – | – | – | 93 % |
+
+Why the wellhead moves so little:
+- The conductor/20" behaves like a ≈ 240 MN/m spring.
+- The inner strings are ≤ 2.1 MN/m each.
+- Their ≈ 4 MN push lifts the wellhead only ≈ 17 mm; the other 44 mm is the conductor's own expansion.
+
+Why length is decisive here:
+- The same 61 mm would relieve a 100 m free section by ≈ 70 %.
+- It relieves a 1,300 m section by only ≈ 5 %.
+
+The only real "unlock" would be the hanger sliding up, which is a seal failure. Load is reduced by less heat, more hanging tension, and stronger pipe and connections.
+
+---
+
+## 11. References
 
 - Lubinski, A., Althouse, W.S., Logan, J.L. (1962). *Helical Buckling of Tubing Sealed in Packers.* JPT 14(6), SPE-178-PA.
 - Mitchell, R.F. (1988). *New Concepts for Helical Buckling.* SPE Drilling Engineering, SPE-15470-PA.

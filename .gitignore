@@ -7,3 +7,5 @@ media/
 deliverables/*_concat.mp4
 deliverables/concat.txt
 video/compare/audio/*.wav
+video/qa/audio/*.wav
+deliverables/_work_combined/

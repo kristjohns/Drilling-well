@@ -11,8 +11,8 @@ from manim import *  # noqa: F401,F403
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-VARIANT = os.environ.get("VIDEO_VARIANT", "main")      # "main" or "compare"
-_VDIR = os.path.join(HERE, "compare") if VARIANT == "compare" else HERE
+VARIANT = os.environ.get("VIDEO_VARIANT", "main")      # "main", "compare" or "qa"
+_VDIR = HERE if VARIANT == "main" else os.path.join(HERE, VARIANT)
 AUDIO = os.path.join(_VDIR, "audio")
 DUR = json.load(open(os.path.join(AUDIO, "durations.json")))
 RES = json.load(open(os.path.join(ROOT, "analysis", "results", "results.json")))
