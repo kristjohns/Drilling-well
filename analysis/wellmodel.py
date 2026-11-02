@@ -98,13 +98,15 @@ class Pipe:
 
 # Standard API sizes ---------------------------------------------------------
 P30 = Pipe('30" conductor', 30.0, 1.000, 309.7, "X-56", 386)
+P36 = Pipe('36" conductor', 36.0, 1.500, 553.0, "X-56", 386)
+P36T1 = Pipe('36" x 1" conductor', 36.0, 1.000, 374.0, "X-56", 386)
 P20 = Pipe('20" surface casing', 20.0, 0.635, 133.0, "K-55", 379)
 P1338 = Pipe('13-3/8" intermediate', 13.375, 0.514, 72.0, "L-80", 552)
 P958 = Pipe('9-5/8" production', 9.625, 0.545, 53.5, "P-110", 758)
 P7 = Pipe('7" liner', 7.0, 0.408, 29.0, "P-110", 758)
 P512 = Pipe('5-1/2" tubing', 5.5, 0.304, 17.0, "13Cr-80", 552)
 
-HOLE = {"36": 36.0 * INCH / 2, "26": 26.0 * INCH / 2, "17.5": 17.5 * INCH / 2,
+HOLE = {"42": 42.0 * INCH / 2, "36": 36.0 * INCH / 2, "26": 26.0 * INCH / 2, "17.5": 17.5 * INCH / 2,
         "12.25": 12.25 * INCH / 2, "8.5": 8.5 * INCH / 2}
 
 
@@ -156,12 +158,24 @@ class Config:
     tz_peak_frac: float = 0.01      # peak friction mobilised at 1 % of D
     # wellhead
     restrained: bool = False
+    conductor: str = "30x1"         # "30x1" (36" hole), "36x1.5" or "36x1" (42" hole)
     k_restraint: float = 0.0        # N/m, partial restraint spring (if not fully restrained)
     include_tubing: bool = True
 
     @property
     def h_riser(self):
         return self.water_depth + self.rkb_msl
+
+
+CONDUCTORS = {"30x1": (P30, "36"), "36x1.5": (P36, "42"), "36x1": (P36T1, "42")}
+
+
+def cond(cfg):
+    return CONDUCTORS[cfg.conductor][0]
+
+
+def cond_hole(cfg):
+    return HOLE[CONDUCTORS[cfg.conductor][1]]
 
 
 # --------------------------------------------------------------------------
@@ -204,15 +218,15 @@ def radial_layers(cfg: Config, z: float):
         return L, HOLE["17.5"]
     # 20"
     L.append((P20.ri, P20.ro, K_STEEL, "20"))
-    outer = P30.ri if z <= cfg.shoe30 else HOLE["26"]
+    outer = cond(cfg).ri if z <= cfg.shoe30 else HOLE["26"]
     k20 = cfg.k_cement if z >= cfg.toc20 else cfg.k_sw_ann
     L.append((P20.ro, outer, k20, "cement20" if z >= cfg.toc20 else "D-ann"))
     if z > cfg.shoe30:
         return L, HOLE["26"]
     # 30"
-    L.append((P30.ri, P30.ro, K_STEEL, "30"))
-    L.append((P30.ro, HOLE["36"], cfg.k_cement, "cement30"))
-    return L, HOLE["36"]
+    L.append((cond(cfg).ri, cond(cfg).ro, K_STEEL, "30"))
+    L.append((cond(cfg).ro, cond_hole(cfg), cfg.k_cement, "cement30"))
+    return L, cond_hole(cfg)
 
 
 def thermal_at(cfg: Config, z: float, Tf: float, Tg: float, t: float):
@@ -345,7 +359,7 @@ def hung_strings(cfg: Config):
         return outer - P1338.ro
 
     def rc_20(z):
-        outer = np.where(z <= cfg.shoe30, P30.ri, HOLE["26"])
+        outer = np.where(z <= cfg.shoe30, cond(cfg).ri, HOLE["26"])
         return outer - P20.ro
 
     def rc_tbg(z):
@@ -451,14 +465,14 @@ def foundation_components(cfg: Config, z: float, th_row: dict):
     comps = []
     bonded_20 = cfg.toc20 <= 0.0 or z >= cfg.toc20
     if z <= cfg.shoe30:
-        comps.append(("30", E_S * P30.As, ALPHA_S, th_row["30"]))
-        A = math.pi * (HOLE["36"] ** 2 - P30.ro ** 2)
+        comps.append(("30", E_S * cond(cfg).As, ALPHA_S, th_row["30"]))
+        A = math.pi * (cond_hole(cfg) ** 2 - cond(cfg).ro ** 2)
         comps.append(("cement30", E_C * A, ALPHA_C, th_row["cement30"]))
         if bonded_20:
             comps.append(("20", E_S * P20.As, ALPHA_S, th_row["20"]))
-            A = math.pi * (P30.ri ** 2 - P20.ro ** 2)
+            A = math.pi * (cond(cfg).ri ** 2 - P20.ro ** 2)
             comps.append(("cement20", E_C * A, ALPHA_C, th_row["cement20"]))
-        D = 2 * HOLE["36"]
+        D = 2 * cond_hole(cfg)
     else:
         if not bonded_20:
             return [], 2 * HOLE["26"]
@@ -605,7 +619,7 @@ def summarise(sol):
         N_top_MN=float(f.N[0] / 1e6),
         Nth_top_MN=float(f.N_th[0] / 1e6),
         comp_top_MN={k: float(v[0] / 1e6) for k, v in f.comp.items()},
-        comp_top_MPa={k: float(v[0] / (_area(k)) / 1e6) for k, v in f.comp.items()},
+        comp_top_MPa={k: float(v[0] / (_area(k, sol["cfg"])) / 1e6) for k, v in f.comp.items()},
         max_mob=float(f.t_mob.max()),
     )
     return out
@@ -615,10 +629,11 @@ def hung_pipe(key):
     return {"20": P20, "13-3/8": P1338, "9-5/8": P958, "tubing": P512}[key]
 
 
-def _area(name):
-    return {"30": P30.As, "20": P20.As,
-            "cement30": math.pi * (HOLE["36"] ** 2 - P30.ro ** 2),
-            "cement20": math.pi * (P30.ri ** 2 - P20.ro ** 2)}[name]
+def _area(name, cfg=None):
+    c, h = (cond(cfg), cond_hole(cfg)) if cfg is not None else (P30, HOLE["36"])
+    return {"30": c.As, "20": P20.As,
+            "cement30": math.pi * (h ** 2 - c.ro ** 2),
+            "cement20": math.pi * (c.ri ** 2 - P20.ro ** 2)}[name]
 
 
 def pipe_table():
