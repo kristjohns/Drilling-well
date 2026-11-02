@@ -8,8 +8,8 @@ SCRIPT = {
         ("l_intro_2", "In this video we calculate it for two conductor sizes. A thirty inch with a one inch wall, and a thirty "
                       "six inch with a one and a half inch wall. After one year of production, holding them down takes about "
                       "nineteen and a half, and twenty four meganewtons. Roughly two thousand, and two and a half thousand tonnes."),
-        ("l_intro_3", "We will build that number step by step by hand, check it against the full model, and look at what the "
-                      "soil does, and does not do."),
+        ("l_intro_3", "We will build that number step by step by hand, check it against the full model, look at what the "
+                      "soil does, and does not do, and finally size the piles it takes to hold it down."),
     ],
     "L02_Definition": [
         ("l_def_1", "Start with the forces on the wellhead once the well is hot. The inner casings and the tubing heat up, and "
@@ -95,16 +95,60 @@ SCRIPT = {
                     "the thirty inch conductor, and three hundred and fifty two with the thirty six inch. Eighty one, and "
                     "ninety three percent of K fifty five yield."),
     ],
-    "L09_Checks": [
-        ("l_chk_1", "So the design checks are the restraint and its anchor, every component the load passes through, the "
+    "L09_Piles": [
+        ("p_1", "So how big must the anchor be? Take a restraint frame held down by four steel piles. The frame pushes down "
+                "on the wellhead with the lock-in load, and each pile carries a quarter of it, as uplift, for as long as the "
+                "well produces."),
+        ("p_2", "Size them for the end of life hand bounds, twenty three and thirty one meganewtons. That is five point seven "
+                "meganewtons per pile for the thirty inch conductor, and seven point seven for the thirty six inch. About five "
+                "hundred and eighty, and seven hundred and ninety tonnes on each pile. A sustained, cycling pull in clay "
+                "deserves a safety factor of two on the soil, so each pile needs roughly twice that capacity."),
+        ("p_3", "In uplift, a pile has no end bearing. It holds with skin friction along its shaft. Alpha, times the "
+                "undrained shear strength, times the circumference, added up over the length, plus its own submerged weight. "
+                "Our clay gets stronger with depth, so the friction grows with the square of the length."),
+        ("p_4", "Solve for the length, and here are the piles, drawn to scale next to the conductor. For the thirty inch "
+                "conductor, four piles one and a half metres wide and fifty five metres long, or two metres wide and forty "
+                "six metres long. For the thirty six inch, sixty six, or fifty five metres. Each pile weighs eighty to a "
+                "hundred and thirty tonnes."),
+        ("p_5", "Length beats diameter, because the deep clay is the strongest. Doubling the diameter from one to two metres "
+                "saves only twenty five to thirty metres, and the pile gets heavier. The steel itself is barely loaded, about "
+                "thirty to forty megapascals, so the wall thickness is set by driving and handling, not by the pull."),
+        ("p_6", "The length is sensitive to the soil. If cycling wears the friction down by a quarter, the piles need about "
+                "eight to ten metres more. With a safety factor of one and a half, or full API friction, they get about "
+                "eight to ten metres shorter."),
+    ],
+    "L10_PileGroup": [
+        ("g_1", "But a pile is not a rigid anchor. To carry load, the steel has to stretch, and the soil friction needs a "
+                "little slip to build up. At its design load, a one and a half metre pile rises about ten to twelve "
+                "millimetres."),
+        ("g_2", "So the four piles act like a stiff spring, about two and a half to three meganewtons per millimetre. And the "
+                "well is a spring too. The more the wellhead is allowed to rise, the less force it takes to hold it. Where the "
+                "two lines cross, the system settles."),
+        ("g_3", "With a rigid frame, the wellhead still rises seven to eight millimetres over ten years, instead of sixty one "
+                "to sixty eight if it were free. And the restraint carries eighteen meganewtons instead of twenty one for the "
+                "thirty inch, and twenty two instead of twenty seven for the thirty six inch. A real frame also flexes. At "
+                "five meganewtons per millimetre, that gives ten to eleven millimetres, and seventeen and twenty meganewtons."),
+        ("g_4", "So four piles hold back almost nine tenths of the growth, and carry about eighty five percent of the fully "
+                "locked load. Bigger piles hardly change that. A slimmer, longer pile stretches more, and a fatter one needs "
+                "more slip, so the stiffness stays about the same. Holding the wellhead truly still would take a far stiffer "
+                "anchor. So size the piles for the full lock-in load, and take the small rise as margin."),
+        ("g_5", "A few practical points. Space the piles at least three to five diameters apart, and away from the "
+                "conductor. The frame carries twenty to thirty meganewtons in bending, so it is a heavy, template sized "
+                "structure. Check creep and cyclic degradation under a sustained pull, and base it all on real site soil data. "
+                "Suction anchors are the alternative, about six metres wide and nineteen to twenty four metres deep. But under "
+                "a sustained pull the suction bleeds away, so count on friction only."),
+    ],
+    "L11_Checks": [
+        ("l_chk_1", "So the design checks are the restraint frame and its piles, every component the load passes through, the "
                     "conductor and the twenty inch at the seabed and at the conductor shoe, the thirteen and three eighths "
                     "hanger lockdown, and fatigue for every start up."),
         ("l_chk_2", "And to reduce the load: allow some movement, or engage the restraint only after the first heat up. "
                     "Reduce the temperature with insulated tubing. Choose the conductor with the lock-in load in mind. And make "
                     "sure the twenty inch is cemented to the seabed."),
         ("l_chk_3", "In short. The lock-in load is the blocked thermal force of everything bonded at the wellhead, plus the "
-                    "push of the inner strings. Steel area times temperature sets it. The soil does not hold it down. It only "
-                    "decides how far a free wellhead would grow, and how well your restraint is anchored."),
+                    "push of the inner strings. Steel area times temperature sets it. The soil does not hold it down. It "
+                    "decides how far a free wellhead would grow, and how long the hold down piles must be. Here, four piles, "
+                    "one and a half metres wide, and fifty five to sixty six metres long."),
     ],
 }
 

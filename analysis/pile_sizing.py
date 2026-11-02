@@ -22,7 +22,9 @@ import numpy as np
 from scipy.optimize import brentq
 
 sys.path.insert(0, os.path.dirname(__file__))
-from wellmodel import Config, solve_well, summarise, E_S, RHO_S, G  # noqa: E402
+from wellmodel import (Config, solve_well, summarise, thermal_profile, hung_strings,  # noqa: E402
+                       solve_string, solve_foundation, E_S, RHO_S, G)
+from lockin_conductor import hand_calc  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 N_PILES = 4
@@ -38,10 +40,13 @@ LK = json.load(open(os.path.join(HERE, "results", "lockin.json")))
 def design_loads(key):
     c = LK[key]
     r10 = [t for t in c["time"] if t["days"] == 3650][0]["R_MN"]
-    # hand bound scales with the temperature rise; 10-yr bound from the ratio of model values
-    ub1 = c["upper_bound_MN"]
-    ub10 = ub1 * r10 / c["R_MN"]
-    return dict(R_1yr=c["R_MN"], R_10yr=r10, bound_1yr=ub1, bound_10yr=ub10)
+    # 10-year hand upper bound: E*A*alpha*dT of the bonded column + fully blocked inner strings
+    cfg = Config(conductor=key, t_prod=TEN_YEARS)
+    hc, _ = hand_calc(cfg)
+    s = summarise(solve_well(Config(conductor=key, restrained=True, t_prod=TEN_YEARS)))
+    inner = sum(-s[k]["full_restraint_force_MN"] for k in ("13-3/8", "9-5/8", "tubing"))
+    ub10 = sum(r["F_MN"] for r in hc) + inner
+    return dict(R_1yr=c["R_MN"], R_10yr=r10, bound_1yr=c["upper_bound_MN"], bound_10yr=ub10)
 
 
 def wall(D):
@@ -120,19 +125,49 @@ def pile_head(D, L, P, alpha=0.6, dz=0.5):
 
 def coupled(key, D, L, alpha=0.6, k_frame=None):
     """Couple the pile group (and optionally a flexible frame) to the well model."""
-    k = 3e9
-    for it in range(30):
-        sol = summarise(solve_well(Config(conductor=key, k_restraint=k, t_prod=TEN_YEARS)))
-        R = sol["R_MN"] * 1e6
-        u_pile, _, _ = pile_head(D, L, R / N_PILES, alpha)
-        u = u_pile + (R / k_frame if k_frame else 0.0)
-        k_new = R / u
-        if abs(k_new - k) / k < 2e-3:
-            k = k_new
-            break
-        k = 0.5 * k + 0.5 * k_new
-    return dict(k_group_MN_per_m=k / 1e6, R_MN=sol["R_MN"], growth_mm=sol["u_wh_mm"],
-                pile_load_MN=sol["R_MN"] / N_PILES)
+    cfg = Config(conductor=key, t_prod=TEN_YEARS)
+    th = thermal_profile(cfg)
+    strings = hung_strings(cfg)
+
+    def R_at(u):
+        """restraint force needed to hold the wellhead at an imposed rise u"""
+        res = [solve_string(cfg, s, th, u) for s in strings]
+        f = solve_foundation(cfg, th, None, u)
+        return -f.top_force - sum(r.dFa_th for r in res)
+
+    def resid(u):
+        R = R_at(u)
+        return u - (pile_head(D, L, R / N_PILES, alpha)[0] + (R / k_frame if k_frame else 0.0))
+
+    u = brentq(resid, 0.0, 0.08, xtol=2e-6)
+    R = R_at(u)
+    return dict(k_group_MN_per_m=R / u / 1e6, R_MN=R / 1e6, growth_mm=u * 1000,
+                pile_load_MN=R / 1e6 / N_PILES)
+
+
+def well_curve(key, n=14):
+    """10-year restraint force vs. imposed wellhead rise (the well acting as a spring)."""
+    cfg = Config(conductor=key, t_prod=TEN_YEARS)
+    th = thermal_profile(cfg)
+    strings = hung_strings(cfg)
+    us = np.concatenate([np.linspace(0, 0.02, 9), np.linspace(0.025, 0.07, n - 9)])
+    R = []
+    for u in us:
+        res = [solve_string(cfg, s, th, u) for s in strings]
+        f = solve_foundation(cfg, th, None, u)
+        R.append((-f.top_force - sum(r.dFa_th for r in res)) / 1e6)
+    return dict(u_mm=(us * 1000).tolist(), R_MN=R)
+
+
+def pile_curve(D, L, Pmax, n=16):
+    Ps = np.linspace(0, Pmax, n)[1:]
+    out = dict(P_MN=[0.0], head_mm=[0.0], stretch_mm=[0.0])
+    for P in Ps:
+        u, st, _ = pile_head(D, L, P)
+        out["P_MN"].append(P / 1e6)
+        out["head_mm"].append(u * 1000)
+        out["stretch_mm"].append(st * 1000)
+    return out
 
 
 def main():
@@ -146,8 +181,9 @@ def main():
             L = required_length(D, Pd)
             Qs, W, As = capacity(D, L)
             u, stretch, mob = pile_head(D, L, Pd)
-            rows.append(dict(D_m=D, t_mm=wall(D) * 1000, L_m=L, Qs_MN=Qs / 1e6, W_MN=W / 1e6,
-                             mass_t=RHO_S * As * L / 1000, head_mm=u * 1000, stretch_mm=stretch * 1000,
+            Lr = math.ceil(L)
+            rows.append(dict(D_m=D, t_mm=wall(D) * 1000, L_m=L, L_round=Lr, Qs_MN=Qs / 1e6, W_MN=W / 1e6,
+                             mass_t=RHO_S * As * L / 1000, mass_round_t=RHO_S * As * Lr / 1000, head_mm=u * 1000, stretch_mm=stretch * 1000,
                              mob_top=mob, k_pile_MN_per_m=Pd / u / 1e6))
         # sensitivities on the 1.5 m pile
         sens = []
@@ -180,7 +216,11 @@ def main():
                 return out_f, min(in_f, plug), steel
             Lc = brentq(lambda Lc: cap(Lc)[0] + cap(Lc)[1] - FS * (Pd - cap(Lc)[2]), 1.0, 200.0)
             suc.append(dict(D_m=Dc, L_m=Lc))
-        out["cases"][key] = dict(label=label, loads_MN=dl, P_design_pile_MN=Pd / 1e6, piles=rows,
+        L15 = math.ceil(required_length(1.5, Pd))
+        Qult = capacity(1.5, L15)[0]
+        curves = dict(well=well_curve(key), pile_1p5=pile_curve(1.5, L15, Qult * 0.98), L_1p5=L15,
+                      Qs_1p5_MN=Qult / 1e6)
+        out["cases"][key] = dict(label=label, loads_MN=dl, P_design_pile_MN=Pd / 1e6, piles=rows, curves=curves,
                                  sens=sens, coupled=cpl, suction=suc,
                                  partial=LK[key]["partial"], free_growth_mm=LK[key]["free_growth_mm"])
         print(label, {k: round(v, 2) for k, v in dl.items()}, "P/pile", round(Pd / 1e6, 2))

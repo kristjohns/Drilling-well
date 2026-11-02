@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "loc
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # spoken-form substitutions (subtitles keep the written form)
-TTS_REPLACEMENTS = {"von Mises": "von Meezes"}
+TTS_REPLACEMENTS = {"von Mises": "von Meezes", "API": "A P I"}
 
 
 def main():

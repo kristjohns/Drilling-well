@@ -41,7 +41,7 @@ class L01_Intro(VScene):
             self.play(LaggedStart(*[FadeIn(c, shift=UP * 0.2) for c in cards], lag_ratio=0.5), run_time=0.45 * d)
             self.play(FadeIn(cap), run_time=0.15 * d)
         with self.voice("l_intro_3") as d:
-            chips = VGroup(*[pill(t_) for t_ in ("definition", "hand calculation", "inner strings", "the soil", "model results", "checks")])
+            chips = VGroup(*[pill(t_) for t_ in ("definition", "hand calculation", "inner strings", "the soil", "model results", "hold-down piles", "checks")])
             chips.arrange(RIGHT, buff=0.18).move_to([0, -2.85, 0])
             if chips.width > 13.6:
                 chips.scale_to_fit_width(13.6)

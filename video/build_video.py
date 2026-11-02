@@ -25,7 +25,8 @@ FILES_CMP = {
 FILES_LK = {
     "L01_Intro": "scenes_lk_a", "L02_Definition": "scenes_lk_a", "L03_Inputs": "scenes_lk_a",
     "L04_HandCalc": "scenes_lk_b", "L05_InnerPush": "scenes_lk_b", "L06_Soil": "scenes_lk_b",
-    "L07_Results": "scenes_lk_c", "L08_Effects": "scenes_lk_c", "L09_Checks": "scenes_lk_c",
+    "L07_Results": "scenes_lk_c", "L08_Effects": "scenes_lk_c",
+    "L09_Piles": "scenes_lk_d", "L10_PileGroup": "scenes_lk_d", "L11_Checks": "scenes_lk_c",
 }
 FILES = {
     "S01_Intro": "scenes_a", "S02_Architecture": "scenes_a", "S03_Wellhead": "scenes_a",

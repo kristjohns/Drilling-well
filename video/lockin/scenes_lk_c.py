@@ -136,10 +136,10 @@ class L08_Effects(VScene):
         self.play(*[FadeOut(m) for m in self.mobjects], run_time=0.8)
 
 
-class L09_Checks(VScene):
+class L11_Checks(VScene):
     def construct(self):
-        hdr = self.header(8, "Checks, and how to reduce it")
-        checks = ["restraint + its anchor in uplift", "every part the load passes through", "conductor + 20\" at the seabed",
+        hdr = self.header(10, "Checks, and how to reduce it")
+        checks = ["restraint frame + piles in uplift", "every part the load passes through", "conductor + 20\" at the seabed",
                   "20\" just below the conductor shoe", "13⅜\" hanger lockdown (≈ 1.0 MN)", "fatigue: every start-up and shut-in"]
         ways = ["allow some movement", "engage the restraint after the first heat-up", "reduce ΔT (insulated tubing)",
                 "choose the conductor with the load in mind", "cement the 20\" to the seabed"]
@@ -169,11 +169,13 @@ class L09_Checks(VScene):
             eq = M(r"R_{lock} \approx \underbrace{\sum E\,A\,\alpha\,\Delta T}_{\text{bonded at the wellhead}} + \underbrace{\sum \Delta F_{inner}}_{\text{inner strings}}", 44, INK)
             eq.move_to([0, 1.3, 0])
             s1 = T("steel area × temperature sets it", 26, ACCENT, weight=BOLD).move_to([0, -0.5, 0])
-            s2 = T("the soil does not hold it down — it sets the free growth and the anchor capacity", 21, INK).move_to([0, -1.4, 0])
+            s2 = T("the soil does not hold it down — it sets the free growth and the pile length", 21, INK).move_to([0, -1.3, 0])
+            s3 = T("4 hold-down piles · Ø 1.5 m · 55 m (30\") / 66 m (36\")", 21, ACCENT).move_to([0, -2.1, 0])
             self.play(Write(eq), run_time=0.35 * d)
             self.play(FadeIn(s1, shift=UP * 0.1), run_time=0.2 * d)
-            self.play(FadeIn(s2, shift=UP * 0.1), run_time=0.25 * d)
-        cr = T("Worked example · 1-D thermal–mechanical model · details: the Conductor Lock-In Load document and analysis/lockin_conductor.py", 14, FAINT)
+            self.play(FadeIn(s2, shift=UP * 0.1), run_time=0.2 * d)
+            self.play(FadeIn(s3, shift=UP * 0.1), run_time=0.15 * d)
+        cr = T("Worked example · 1-D thermal–mechanical model · details: the Conductor Lock-In Load document, analysis/lockin_conductor.py and analysis/pile_sizing.py", 14, FAINT)
         cr.to_edge(DOWN, buff=0.3)
         self.play(FadeIn(cr), run_time=0.6)
         self.wait(2.0)
