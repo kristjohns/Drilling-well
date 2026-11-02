@@ -72,6 +72,12 @@ def capacity(D, L, alpha=0.6, t=None):
     return Qs, W, As
 
 
+def row_for_mass(D, L):
+    """steel mass [t] of a pile of diameter D [m] and length L [m] with the standard wall"""
+    t = wall(D)
+    return RHO_S * math.pi * (D ** 2 - (D - 2 * t) ** 2) / 4 * L / 1000
+
+
 def required_length(D, P, alpha=0.6, fs=FS):
     """shortest embedded length with Qs >= fs*(P - W')"""
     f = lambda L: capacity(D, L, alpha)[0] - fs * (P - capacity(D, L, alpha)[1])

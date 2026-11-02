@@ -122,7 +122,7 @@ class Config:
     grad: float = 0.033             # degC/m below seabed
     z_bh: float = 3400.0            # m below seabed: producing interval (mid)
     # casing points (m below seabed)
-    shoe30: float = 80.0
+    shoe30: float = 80.0            # <= 0: no conductor (20" cemented to seabed in the 26" hole)
     shoe20: float = 700.0
     toc20: float = 0.0              # 0 = cemented to seabed
     shoe1338: float = 1800.0
@@ -631,9 +631,10 @@ def hung_pipe(key):
 
 def _area(name, cfg=None):
     c, h = (cond(cfg), cond_hole(cfg)) if cfg is not None else (P30, HOLE["36"])
+    no_cond = cfg is not None and cfg.shoe30 <= 0.0      # no conductor: 20" cemented in the 26" hole
     return {"30": c.As, "20": P20.As,
             "cement30": math.pi * (h ** 2 - c.ro ** 2),
-            "cement20": math.pi * (c.ri ** 2 - P20.ro ** 2)}[name]
+            "cement20": math.pi * ((HOLE["26"] if no_cond else c.ri) ** 2 - P20.ro ** 2)}[name]
 
 
 def pipe_table():
