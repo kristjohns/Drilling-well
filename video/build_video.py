@@ -13,6 +13,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "compare"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lockin"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FILES_CMP = {
@@ -20,6 +21,11 @@ FILES_CMP = {
     "C04_ForceBalance": "scenes_cmp_b", "C05_Foundation": "scenes_cmp_b",
     "C06_InnerStrings": "scenes_cmp_c", "C07_Scoreboard": "scenes_cmp_c",
     "C08_Partial": "scenes_cmp_d", "C09_Surface20": "scenes_cmp_d", "C10_Conclusion": "scenes_cmp_d",
+}
+FILES_LK = {
+    "L01_Intro": "scenes_lk_a", "L02_Definition": "scenes_lk_a", "L03_Inputs": "scenes_lk_a",
+    "L04_HandCalc": "scenes_lk_b", "L05_InnerPush": "scenes_lk_b", "L06_Soil": "scenes_lk_b",
+    "L07_Results": "scenes_lk_c", "L08_Effects": "scenes_lk_c", "L09_Checks": "scenes_lk_c",
 }
 FILES = {
     "S01_Intro": "scenes_a", "S02_Architecture": "scenes_a", "S03_Wellhead": "scenes_a",
@@ -64,7 +70,7 @@ def main():
     ap.add_argument("--media", required=True)
     ap.add_argument("--quality", default="1080p30")
     ap.add_argument("--out", required=True)
-    ap.add_argument("--variant", default="main", choices=["main", "compare"])
+    ap.add_argument("--variant", default="main", choices=["main", "compare", "lockin"])
     a = ap.parse_args()
     global FILES
     if a.variant == "compare":
@@ -72,6 +78,11 @@ def main():
         FILES = FILES_CMP
         tdir = os.path.join(HERE, "compare", "timings")
         title = "Free vs Restrained Wellhead - subsea well comparison"
+    elif a.variant == "lockin":
+        from narration_lk import SCRIPT, SCENE_ORDER
+        FILES = FILES_LK
+        tdir = os.path.join(HERE, "lockin", "timings")
+        title = "Conductor Lock-In Load - 30 in vs 36 in conductor"
     else:
         from narration import SCRIPT, SCENE_ORDER
         tdir = os.path.join(HERE, "timings")

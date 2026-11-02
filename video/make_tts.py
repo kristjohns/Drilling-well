@@ -14,6 +14,7 @@ import soundfile as sf
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "compare"))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "qa"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lockin"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -27,12 +28,14 @@ def main():
     ap.add_argument("--voice", default="af_heart")
     ap.add_argument("--speed", type=float, default=1.0)
     ap.add_argument("--only", nargs="*")
-    ap.add_argument("--variant", default="main", choices=["main", "compare", "qa"])
+    ap.add_argument("--variant", default="main", choices=["main", "compare", "qa", "lockin"])
     a = ap.parse_args()
     if a.variant == "compare":
         from narration_cmp import SCRIPT
     elif a.variant == "qa":
         from narration_qa import SCRIPT
+    elif a.variant == "lockin":
+        from narration_lk import SCRIPT
     else:
         from narration import SCRIPT
     from kokoro_onnx import Kokoro

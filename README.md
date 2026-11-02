@@ -9,6 +9,14 @@ What happens to the casing strings of a subsea well when production heats them u
   - Part 1: the explainer;
   - Part 2: the free vs. restrained comparison;
   - Part 3: Q&A on restraint force split, length, buckling/yield limits and why the inner casings are locked in.
+- **Conductor lock-in load video:** `deliverables/conductor_lock_in_load.mp4` (≈ 8 min). It shows how to calculate the force needed to hold a 30" × 1" or 36" × 1.5" conductor down:
+  - the hand calculation;
+  - the inner-string push;
+  - the role of the soil;
+  - model results, partial restraint and time;
+  - design checks.
+
+  Calculations are in `analysis/lockin_conductor.py`; video source is in `video/lockin/`.
 - **Explainer video:** `deliverables/restrained_wellhead_growth_explainer.mp4` (≈ 12.5 min, narrated, with English subtitles in the `.srt`).
 - **Comparison video:** `deliverables/free_vs_restrained_wellhead_comparison.mp4` (≈ 7 min). It runs the free and restrained wellhead side by side and covers:
   - the heat-up;

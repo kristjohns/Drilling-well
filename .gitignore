@@ -9,3 +9,4 @@ deliverables/concat.txt
 video/compare/audio/*.wav
 video/qa/audio/*.wav
 deliverables/_work_combined/
+video/lockin/audio/*.wav
